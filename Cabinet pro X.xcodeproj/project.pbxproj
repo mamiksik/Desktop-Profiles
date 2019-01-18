@@ -1,0 +1,726 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5B10BE1B21D7E7F900B68865 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10BE1A21D7E7F900B68865 /* AppDelegate.swift */; };
+		5B10BE1E21D7F30600B68865 /* NightShift.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 5B10BE1D21D7F30600B68865 /* NightShift.scpt */; };
+		5B10BE2321D7FF9200B68865 /* QuitPreferences.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 5B10BE1F21D7FF9200B68865 /* QuitPreferences.scpt */; };
+		5B10BE2421D7FF9200B68865 /* DarkMode.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 5B10BE2021D7FF9200B68865 /* DarkMode.scpt */; };
+		5B10BE2521D7FF9200B68865 /* OpenPreferences.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 5B10BE2121D7FF9200B68865 /* OpenPreferences.scpt */; };
+		5B10BE2621D7FF9200B68865 /* AccentColour.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 5B10BE2221D7FF9200B68865 /* AccentColour.scpt */; };
+		5B10BE2821D84E4500B68865 /* DockAutoHide.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 5B10BE2721D84E4500B68865 /* DockAutoHide.scpt */; };
+		5B10BE2A21D9485400B68865 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10BE2921D9485400B68865 /* Extensions.swift */; };
+		5B10BE2C21D9489000B68865 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10BE2B21D9489000B68865 /* Enums.swift */; };
+		5B26F17821D0175600073BE3 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B26F17A21D0175600073BE3 /* PreferencesWindow.xib */; };
+		5B26F18121D0229C00073BE3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B26F18321D0229C00073BE3 /* MainMenu.xib */; };
+		5B3A971521CA5EAD00239138 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A971421CA5EAD00239138 /* Utils.swift */; };
+		5B3A971C21CACBDB00239138 /* PreferencesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A971A21CACBDB00239138 /* PreferencesWindow.swift */; };
+		5B3A972121CADAA100239138 /* StatusMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A972021CADAA100239138 /* StatusMenu.swift */; };
+		5B3A972B21CAE72200239138 /* MMStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A972A21CAE72200239138 /* MMStates.swift */; };
+		5B9E05D521EB692E009169AC /* MMSpaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E05D421EB692E009169AC /* MMSpaces.swift */; };
+		5BB34CA921E9519600ABCC30 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB34CA821E9519600ABCC30 /* ScriptingBridge.framework */; };
+		5BB34CAB21E951AA00ABCC30 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB34CAA21E951AA00ABCC30 /* Carbon.framework */; };
+		5BB34D6D21EB503100ABCC30 /* SpacesApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB34D6C21EB503100ABCC30 /* SpacesApi.m */; };
+		5BB34D7121EB531C00ABCC30 /* CabinetproX-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 5BB34D6F21EB507200ABCC30 /* CabinetproX-Bridging-Header.h */; };
+		5BC2D1D821C1165F00C5A255 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BC2D1D721C1165F00C5A255 /* Assets.xcassets */; };
+		5BC2D1E421C11A9B00C5A255 /* MMApplications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC2D1E321C11A9B00C5A255 /* MMApplications.swift */; };
+		5BC88D9021C2D0C5005B9EEA /* Facade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC88D8F21C2D0C5005B9EEA /* Facade.swift */; };
+		5BC88E9721C57A5E005B9EEA /* Silica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC88E9121C579C2005B9EEA /* Silica.framework */; };
+		5BC88E9821C57A5E005B9EEA /* Silica.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC88E9121C579C2005B9EEA /* Silica.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5BC88E9B21C57B7C005B9EEA /* BBLBasics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC88E9A21C57B7C005B9EEA /* BBLBasics.framework */; };
+		5BC88E9C21C57B94005B9EEA /* BBLBasics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC88E9A21C57B7C005B9EEA /* BBLBasics.framework */; };
+		5BC88E9D21C57B94005B9EEA /* BBLBasics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC88E9A21C57B7C005B9EEA /* BBLBasics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5BCEF0B121D950320082534B /* ProfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCEF0B021D950320082534B /* ProfileEntity.swift */; };
+		5BCEF0B421D950870082534B /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCEF0B321D950870082534B /* Protocols.swift */; };
+		5BCEF0B921D951220082534B /* AppEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCEF0B621D951220082534B /* AppEntity.swift */; };
+		5BCEF0BB21D951220082534B /* WindowEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCEF0B721D951220082534B /* WindowEntity.swift */; };
+		5BCEF0BD21D951220082534B /* WorkflowEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCEF0B821D951220082534B /* WorkflowEntity.swift */; };
+		5BF37D4E21D250C7003E80A8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BF37D5021D250C7003E80A8 /* Localizable.strings */; };
+		6FB3A1C14374B7624722C1BC /* Pods_CabinetproX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F056554B81F2EBD90B4D55 /* Pods_CabinetproX.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5B3A974921CBDD9300239138 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BC88E8D21C57920005B9EEA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 11;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BC88E9921C57A5E005B9EEA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5BC88E9D21C57B94005B9EEA /* BBLBasics.framework in Embed Frameworks */,
+				5BC88E9821C57A5E005B9EEA /* Silica.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		54F056554B81F2EBD90B4D55 /* Pods_CabinetproX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CabinetproX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B10BE1A21D7E7F900B68865 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5B10BE1D21D7F30600B68865 /* NightShift.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = NightShift.scpt; sourceTree = "<group>"; };
+		5B10BE1F21D7FF9200B68865 /* QuitPreferences.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = QuitPreferences.scpt; sourceTree = "<group>"; };
+		5B10BE2021D7FF9200B68865 /* DarkMode.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DarkMode.scpt; sourceTree = "<group>"; };
+		5B10BE2121D7FF9200B68865 /* OpenPreferences.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OpenPreferences.scpt; sourceTree = "<group>"; };
+		5B10BE2221D7FF9200B68865 /* AccentColour.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AccentColour.scpt; sourceTree = "<group>"; };
+		5B10BE2721D84E4500B68865 /* DockAutoHide.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DockAutoHide.scpt; sourceTree = "<group>"; };
+		5B10BE2921D9485400B68865 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5B10BE2B21D9489000B68865 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		5B26F17E21D017B500073BE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PreferencesWindow.xib; sourceTree = "<group>"; };
+		5B26F18021D017CA00073BE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PreferencesWindow.strings; sourceTree = "<group>"; };
+		5B26F18221D0229C00073BE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		5B26F18521D022B400073BE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		5B3A971421CA5EAD00239138 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		5B3A971A21CACBDB00239138 /* PreferencesWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindow.swift; sourceTree = "<group>"; };
+		5B3A972021CADAA100239138 /* StatusMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenu.swift; sourceTree = "<group>"; };
+		5B3A972A21CAE72200239138 /* MMStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMStates.swift; sourceTree = "<group>"; };
+		5B3A973621CBDD9300239138 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		5B9E05D421EB692E009169AC /* MMSpaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMSpaces.swift; sourceTree = "<group>"; };
+		5BB34CA821E9519600ABCC30 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		5BB34CAA21E951AA00ABCC30 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		5BB34CB821E95CA100ABCC30 /* libpthread.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libpthread.tbd; path = usr/lib/libpthread.tbd; sourceTree = SDKROOT; };
+		5BB34D6C21EB503100ABCC30 /* SpacesApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpacesApi.m; sourceTree = "<group>"; };
+		5BB34D6F21EB507200ABCC30 /* CabinetproX-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CabinetproX-Bridging-Header.h"; sourceTree = "<group>"; };
+		5BB34D7021EB525B00ABCC30 /* SpacesApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpacesApi.h; sourceTree = "<group>"; };
+		5BC2D1D021C1165C00C5A255 /* CabinetproX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CabinetproX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BC2D1D721C1165F00C5A255 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5BC2D1DC21C1165F00C5A255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BC2D1E321C11A9B00C5A255 /* MMApplications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMApplications.swift; sourceTree = "<group>"; };
+		5BC2D1F121C1BBB000C5A255 /* CabinetproX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CabinetproX.entitlements; sourceTree = "<group>"; };
+		5BC88D8F21C2D0C5005B9EEA /* Facade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facade.swift; sourceTree = "<group>"; };
+		5BC88E9121C579C2005B9EEA /* Silica.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Silica.framework; sourceTree = "<group>"; };
+		5BC88E9A21C57B7C005B9EEA /* BBLBasics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BBLBasics.framework; sourceTree = "<group>"; };
+		5BCEF0B021D950320082534B /* ProfileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEntity.swift; sourceTree = "<group>"; };
+		5BCEF0B321D950870082534B /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		5BCEF0B621D951220082534B /* AppEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppEntity.swift; sourceTree = "<group>"; };
+		5BCEF0B721D951220082534B /* WindowEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowEntity.swift; sourceTree = "<group>"; };
+		5BCEF0B821D951220082534B /* WorkflowEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkflowEntity.swift; sourceTree = "<group>"; };
+		5BF37D4A21D15433003E80A8 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		5BF37D4B21D15433003E80A8 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/PreferencesWindow.strings; sourceTree = "<group>"; };
+		5BF37D5121D250CB003E80A8 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5BF37D5221D2543B003E80A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5ED6A2ADEF8CAFB30C984448 /* Pods-CabinetproX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CabinetproX.debug.xcconfig"; path = "Target Support Files/Pods-CabinetproX/Pods-CabinetproX.debug.xcconfig"; sourceTree = "<group>"; };
+		FAD286F6029A1354D2ED0F11 /* Pods-CabinetproX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CabinetproX.release.xcconfig"; path = "Target Support Files/Pods-CabinetproX/Pods-CabinetproX.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5BC2D1CD21C1165C00C5A255 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BB34CAB21E951AA00ABCC30 /* Carbon.framework in Frameworks */,
+				5BB34CA921E9519600ABCC30 /* ScriptingBridge.framework in Frameworks */,
+				5BC88E9C21C57B94005B9EEA /* BBLBasics.framework in Frameworks */,
+				5BC88E9B21C57B7C005B9EEA /* BBLBasics.framework in Frameworks */,
+				5BC88E9721C57A5E005B9EEA /* Silica.framework in Frameworks */,
+				6FB3A1C14374B7624722C1BC /* Pods_CabinetproX.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		31B05F57151A20A0BDF50D50 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5BB34CB821E95CA100ABCC30 /* libpthread.tbd */,
+				5BB34CAA21E951AA00ABCC30 /* Carbon.framework */,
+				5BB34CA821E9519600ABCC30 /* ScriptingBridge.framework */,
+				5BC88E9A21C57B7C005B9EEA /* BBLBasics.framework */,
+				5BC88E9121C579C2005B9EEA /* Silica.framework */,
+				5B3A973621CBDD9300239138 /* NotificationCenter.framework */,
+				54F056554B81F2EBD90B4D55 /* Pods_CabinetproX.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B10BE1C21D7F2E800B68865 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				5B10BE1D21D7F30600B68865 /* NightShift.scpt */,
+				5B10BE2721D84E4500B68865 /* DockAutoHide.scpt */,
+				5B10BE2221D7FF9200B68865 /* AccentColour.scpt */,
+				5B10BE2021D7FF9200B68865 /* DarkMode.scpt */,
+				5B10BE2121D7FF9200B68865 /* OpenPreferences.scpt */,
+				5B10BE1F21D7FF9200B68865 /* QuitPreferences.scpt */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		5B3A972D21CBA9AF00239138 /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				5B26F18321D0229C00073BE3 /* MainMenu.xib */,
+				5B3A972021CADAA100239138 /* StatusMenu.swift */,
+			);
+			name = MainMenu;
+			sourceTree = "<group>";
+		};
+		5B3A973021CBA9C600239138 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				5B26F17A21D0175600073BE3 /* PreferencesWindow.xib */,
+				5B3A971A21CACBDB00239138 /* PreferencesWindow.swift */,
+			);
+			name = Preferences;
+			sourceTree = "<group>";
+		};
+		5B3A974A21CBDEFB00239138 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				5BF37D5021D250C7003E80A8 /* Localizable.strings */,
+				5B3A971421CA5EAD00239138 /* Utils.swift */,
+				5BC2D1E321C11A9B00C5A255 /* MMApplications.swift */,
+				5B3A972A21CAE72200239138 /* MMStates.swift */,
+				5B9E05D421EB692E009169AC /* MMSpaces.swift */,
+				5BCEF0BF21D9547A0082534B /* Swift */,
+				5BB34C9E21E94F7900ABCC30 /* Objective-C */,
+				5BC88E5F21C55AE0005B9EEA /* Model */,
+				5B10BE1C21D7F2E800B68865 /* Scripts */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		5BB34C9E21E94F7900ABCC30 /* Objective-C */ = {
+			isa = PBXGroup;
+			children = (
+				5BB34D7021EB525B00ABCC30 /* SpacesApi.h */,
+				5BB34D6C21EB503100ABCC30 /* SpacesApi.m */,
+				5BB34D6F21EB507200ABCC30 /* CabinetproX-Bridging-Header.h */,
+			);
+			path = "Objective-C";
+			sourceTree = "<group>";
+		};
+		5BC2D1C721C1165C00C5A255 = {
+			isa = PBXGroup;
+			children = (
+				5B3A974A21CBDEFB00239138 /* Shared */,
+				5BC2D1D221C1165C00C5A255 /* CabinetproX */,
+				5BC2D1D121C1165C00C5A255 /* Products */,
+				8329C9A7EDAF54269599E7A2 /* Pods */,
+				31B05F57151A20A0BDF50D50 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5BC2D1D121C1165C00C5A255 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5BC2D1D021C1165C00C5A255 /* CabinetproX.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5BC2D1D221C1165C00C5A255 /* CabinetproX */ = {
+			isa = PBXGroup;
+			children = (
+				5B10BE1A21D7E7F900B68865 /* AppDelegate.swift */,
+				5BC88E6121C55B29005B9EEA /* User Interface */,
+				5BC88E6421C55DE3005B9EEA /* Supporting Filess */,
+			);
+			path = CabinetproX;
+			sourceTree = "<group>";
+		};
+		5BC88E5F21C55AE0005B9EEA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5BCEF0AF21D950210082534B /* Entities */,
+				5BC88D8F21C2D0C5005B9EEA /* Facade.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5BC88E6121C55B29005B9EEA /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				5B3A972D21CBA9AF00239138 /* MainMenu */,
+				5B3A973021CBA9C600239138 /* Preferences */,
+			);
+			path = "User Interface";
+			sourceTree = "<group>";
+		};
+		5BC88E6421C55DE3005B9EEA /* Supporting Filess */ = {
+			isa = PBXGroup;
+			children = (
+				5BC2D1F121C1BBB000C5A255 /* CabinetproX.entitlements */,
+				5BC2D1DC21C1165F00C5A255 /* Info.plist */,
+				5BC2D1D721C1165F00C5A255 /* Assets.xcassets */,
+			);
+			name = "Supporting Filess";
+			sourceTree = "<group>";
+		};
+		5BCEF0AF21D950210082534B /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				5BCEF0B621D951220082534B /* AppEntity.swift */,
+				5BCEF0B021D950320082534B /* ProfileEntity.swift */,
+				5BCEF0B821D951220082534B /* WorkflowEntity.swift */,
+				5BCEF0B721D951220082534B /* WindowEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		5BCEF0BF21D9547A0082534B /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				5B10BE2921D9485400B68865 /* Extensions.swift */,
+				5B10BE2B21D9489000B68865 /* Enums.swift */,
+				5BCEF0B321D950870082534B /* Protocols.swift */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		8329C9A7EDAF54269599E7A2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5ED6A2ADEF8CAFB30C984448 /* Pods-CabinetproX.debug.xcconfig */,
+				FAD286F6029A1354D2ED0F11 /* Pods-CabinetproX.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5BC2D1CF21C1165C00C5A255 /* CabinetproX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BC2D1E021C1165F00C5A255 /* Build configuration list for PBXNativeTarget "CabinetproX" */;
+			buildPhases = (
+				1F4A1F7B50DA4107F5BCA5DE /* [CP] Check Pods Manifest.lock */,
+				5BC2D1CC21C1165C00C5A255 /* Sources */,
+				5BC2D1CD21C1165C00C5A255 /* Frameworks */,
+				5BC2D1CE21C1165C00C5A255 /* Resources */,
+				5BC88E8D21C57920005B9EEA /* CopyFiles */,
+				5BC88E9921C57A5E005B9EEA /* Embed Frameworks */,
+				5B3A974921CBDD9300239138 /* Embed App Extensions */,
+				CB4A916C69F3EEBB3DB456B7 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CabinetproX;
+			productName = Maturitka;
+			productReference = 5BC2D1D021C1165C00C5A255 /* CabinetproX.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5BC2D1C821C1165C00C5A255 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Martin Miksik";
+				TargetAttributes = {
+					5BC2D1CF21C1165C00C5A255 = {
+						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 0;
+							};
+							com.apple.HardenedRuntime = {
+								enabled = 0;
+							};
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 5BC2D1CB21C1165C00C5A255 /* Build configuration list for PBXProject "Cabinet pro X" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				cs,
+			);
+			mainGroup = 5BC2D1C721C1165C00C5A255;
+			productRefGroup = 5BC2D1D121C1165C00C5A255 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5BC2D1CF21C1165C00C5A255 /* CabinetproX */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5BC2D1CE21C1165C00C5A255 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B10BE2521D7FF9200B68865 /* OpenPreferences.scpt in Resources */,
+				5BC2D1D821C1165F00C5A255 /* Assets.xcassets in Resources */,
+				5B10BE2621D7FF9200B68865 /* AccentColour.scpt in Resources */,
+				5BF37D4E21D250C7003E80A8 /* Localizable.strings in Resources */,
+				5B10BE1E21D7F30600B68865 /* NightShift.scpt in Resources */,
+				5B10BE2821D84E4500B68865 /* DockAutoHide.scpt in Resources */,
+				5B26F17821D0175600073BE3 /* PreferencesWindow.xib in Resources */,
+				5B26F18121D0229C00073BE3 /* MainMenu.xib in Resources */,
+				5B10BE2421D7FF9200B68865 /* DarkMode.scpt in Resources */,
+				5B10BE2321D7FF9200B68865 /* QuitPreferences.scpt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F4A1F7B50DA4107F5BCA5DE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CabinetproX-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB4A916C69F3EEBB3DB456B7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CabinetproX/Pods-CabinetproX-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/KeyHolder/KeyHolder.framework",
+				"${BUILT_PRODUCTS_DIR}/Magnet/Magnet.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ShellOut/ShellOut.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSocket/SwiftSocket.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeyHolder.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Magnet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ShellOut.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSocket.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CabinetproX/Pods-CabinetproX-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5BC2D1CC21C1165C00C5A255 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B3A971C21CACBDB00239138 /* PreferencesWindow.swift in Sources */,
+				5B3A972B21CAE72200239138 /* MMStates.swift in Sources */,
+				5BCEF0B421D950870082534B /* Protocols.swift in Sources */,
+				5BCEF0BB21D951220082534B /* WindowEntity.swift in Sources */,
+				5BCEF0BD21D951220082534B /* WorkflowEntity.swift in Sources */,
+				5B9E05D521EB692E009169AC /* MMSpaces.swift in Sources */,
+				5BC2D1E421C11A9B00C5A255 /* MMApplications.swift in Sources */,
+				5B3A972121CADAA100239138 /* StatusMenu.swift in Sources */,
+				5B3A971521CA5EAD00239138 /* Utils.swift in Sources */,
+				5BC88D9021C2D0C5005B9EEA /* Facade.swift in Sources */,
+				5B10BE1B21D7E7F900B68865 /* AppDelegate.swift in Sources */,
+				5B10BE2C21D9489000B68865 /* Enums.swift in Sources */,
+				5BCEF0B121D950320082534B /* ProfileEntity.swift in Sources */,
+				5B10BE2A21D9485400B68865 /* Extensions.swift in Sources */,
+				5BCEF0B921D951220082534B /* AppEntity.swift in Sources */,
+				5BB34D6D21EB503100ABCC30 /* SpacesApi.m in Sources */,
+				5BB34D7121EB531C00ABCC30 /* CabinetproX-Bridging-Header.h in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5B26F17A21D0175600073BE3 /* PreferencesWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B26F17E21D017B500073BE3 /* Base */,
+				5B26F18021D017CA00073BE3 /* en */,
+				5BF37D4B21D15433003E80A8 /* cs */,
+			);
+			name = PreferencesWindow.xib;
+			sourceTree = "<group>";
+		};
+		5B26F18321D0229C00073BE3 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B26F18221D0229C00073BE3 /* Base */,
+				5B26F18521D022B400073BE3 /* en */,
+				5BF37D4A21D15433003E80A8 /* cs */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		5BF37D5021D250C7003E80A8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BF37D5121D250CB003E80A8 /* cs */,
+				5BF37D5221D2543B003E80A8 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5BC2D1DE21C1165F00C5A255 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5BC2D1DF21C1165F00C5A255 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		5BC2D1E121C1165F00C5A255 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5ED6A2ADEF8CAFB30C984448 /* Pods-CabinetproX.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = CabinetproX/CabinetproX.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = PJUC9VKD3V;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Maturitka",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/SharedCode/Objective-C",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/CabinetproX/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SharedCode/Objective-C",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mamiksik.CabinetproX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Objective-C/CabinetproX-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		5BC2D1E221C1165F00C5A255 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAD286F6029A1354D2ED0F11 /* Pods-CabinetproX.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = CabinetproX/CabinetproX.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = PJUC9VKD3V;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Maturitka",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/SharedCode/Objective-C",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/CabinetproX/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SharedCode/Objective-C",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mamiksik.CabinetproX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Objective-C/CabinetproX-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5BC2D1CB21C1165C00C5A255 /* Build configuration list for PBXProject "Cabinet pro X" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BC2D1DE21C1165F00C5A255 /* Debug */,
+				5BC2D1DF21C1165F00C5A255 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BC2D1E021C1165F00C5A255 /* Build configuration list for PBXNativeTarget "CabinetproX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BC2D1E121C1165F00C5A255 /* Debug */,
+				5BC2D1E221C1165F00C5A255 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5BC2D1C821C1165C00C5A255 /* Project object */;
+}

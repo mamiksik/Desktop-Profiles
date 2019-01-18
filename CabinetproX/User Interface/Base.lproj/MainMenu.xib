@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Maturitka" customModuleProvider="target"/>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="ahk-QK-e7D" customClass="StatusMenu" customModule="Maturitka" customModuleProvider="target">
+            <connections>
+                <outlet property="statusMenu" destination="XuQ-NC-0mu" id="SlC-rf-fKV"/>
+            </connections>
+        </customObject>
+        <menu id="XuQ-NC-0mu">
+            <items>
+                <menuItem title="Quit" keyEquivalent="q" id="6Y1-5a-joc">
+                    <connections>
+                        <action selector="quit:" target="ahk-QK-e7D" id="dPD-Jv-ixU"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Preferences" keyEquivalent="p" id="bOg-mp-6eq">
+                    <connections>
+                        <action selector="openPreferences:" target="ahk-QK-e7D" id="gft-X4-quh"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="-27" y="175"/>
+        </menu>
+    </objects>
+</document>

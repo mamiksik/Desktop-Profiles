@@ -1,0 +1,60 @@
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "0yG-yW-EUg"; */
+"0yG-yW-EUg.title" = "Text Cell";
+
+/* Class = "NSButtonCell"; title = "Save preferences"; ObjectID = "7h7-bo-VDv"; */
+"7h7-bo-VDv.title" = "Uložit předvolbu";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "CUP-wq-vvV"; */
+"CUP-wq-vvV.title" = "Text Cell";
+
+/* Class = "NSMenuItem"; title = "Profile 2"; ObjectID = "EGd-cM-3hi"; */
+"EGd-cM-3hi.title" = "Profile 2";
+
+/* Class = "NSButtonCell"; title = "Restore"; ObjectID = "EdW-X9-0tP"; */
+"EdW-X9-0tP.title" = "Nahrát profil";
+
+/* Class = "NSWindow"; title = "Preferences"; ObjectID = "F0z-JX-Cv5"; */
+"F0z-JX-Cv5.title" = "Nastavení";
+
+/* Class = "NSButtonCell"; title = "Record"; ObjectID = "FCh-th-L6K"; */
+"FCh-th-L6K.title" = "Zaznamenta současný stav";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "MEw-V5-W0S"; */
+"MEw-V5-W0S.title" = "Text Cell";
+
+/* Class = "NSButtonCell"; title = "Delete"; ObjectID = "T5n-gQ-eZp"; */
+"T5n-gQ-eZp.title" = "Smazat";
+
+/* Class = "NSMenuItem"; title = "Profile 1"; ObjectID = "Ton-88-zqe"; */
+"Ton-88-zqe.title" = "Profile 1";
+
+/* Class = "NSButtonCell"; title = "Check"; ObjectID = "WAH-fq-5jG"; */
+"WAH-fq-5jG.title" = "Check";
+
+/* Class = "NSButtonCell"; title = "Check"; ObjectID = "WDL-HP-pFn"; */
+"WDL-HP-pFn.title" = "Check";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "WiO-Vg-NSQ"; */
+"WiO-Vg-NSQ.title" = "Table View Cell";
+
+/* Class = "NSButtonCell"; title = "Add"; ObjectID = "boC-Mj-GNp"; */
+"boC-Mj-GNp.title" = "Přidat";
+
+/* Class = "NSTextFieldCell"; title = "Profile select"; ObjectID = "by8-Xp-L8y"; */
+"by8-Xp-L8y.title" = "Výber profilu";
+
+/* Class = "NSTextFieldCell"; title = "Name"; ObjectID = "lzI-QK-r36"; */
+"lzI-QK-r36.title" = "Názav";
+
+/* Class = "NSButtonCell"; title = "Check"; ObjectID = "mvf-v3-hCL"; */
+"mvf-v3-hCL.title" = "Check";
+
+/* Class = "NSTextFieldCell"; title = "Application list"; ObjectID = "ndX-m2-eai"; */
+"ndX-m2-eai.title" = "Seznam aplikací";
+
+/* Class = "NSTextFieldCell"; title = "Setting"; ObjectID = "o4R-j0-CKN"; */
+"o4R-j0-CKN.title" = "Nastavení";
+
+/* Class = "NSMenuItem"; title = "Profile 3"; ObjectID = "ref-Uu-WPx"; */
+"ref-Uu-WPx.title" = "Profile 3";

@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  Maturitka
+
+  Created by Martin Miksik on 24/12/2018.
+  Copyright © 2018 Martin Miksik. All rights reserved.
+*/
+
+"preferences.alert.removeFromProfile.question" = "Remove app from profile?";
+"preferences.alert.removeFromProfile.text" = "By doing this saved state of application are also removed.";
+
+"preferences.alert.deleteProfile.question" = "Delete profile?";
+"preferences.alert.deleteProfile.text" = "Delete profile and it's saved application states. This operation can not be undone.";
