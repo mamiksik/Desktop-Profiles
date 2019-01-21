@@ -33,10 +33,9 @@ class PreferencesWindow: NSWindowController {
     
     // MARK - Variables
     
-    var tableData: [NameProtocol] = []
+    var tableData: [Runable] = []
 
     var facade = Facade.shared
-    var state = MMStates()
     
     lazy var realm = Facade.shared.realm
     
@@ -62,9 +61,6 @@ class PreferencesWindow: NSWindowController {
     
     override func windowDidLoad() {
         super.windowDidLoad()
-//        window!.delegate = self
-//        self.profileNameField.delegate = self
-        
         self.table.delegate = self
         self.table.dataSource = self
        
@@ -79,10 +75,6 @@ class PreferencesWindow: NSWindowController {
             
             self.updateProfileList()
         }
-    }
-    
-    deinit {
-        print("deinit")
     }
     
     // MARK - Actions
@@ -100,18 +92,10 @@ class PreferencesWindow: NSWindowController {
     }
     
     @IBAction func deleteProfile(_ sender: NSButton) {
-        
-        confirmationDialog(question: "preferences.alert.deleteProfile.question".localized, text: "preferences.alert.deleteProfile.text".localized, completionHandler: { (result)  in
-            if result == NSApplication.ModalResponse.alertSecondButtonReturn {
-                return
-            }
-            
-            try! self.realm.write {
-                self.realm.delete(self.selectedProfile!)
-            }
-            
+        Utils.confirmationDialog(question: "preferences.alert.deleteProfile.question".localized, text: "preferences.alert.deleteProfile.text".localized, window: self.window!, completionHandler: { (result)  in
+            if result == NSApplication.ModalResponse.alertSecondButtonReturn { return }
+            try! self.realm.write { self.realm.delete(self.selectedProfile!) }
             self.updateProfileList()
-        
         })
     }
     
@@ -121,9 +105,7 @@ class PreferencesWindow: NSWindowController {
         if selectedProfile!.name !=  profileNameField.stringValue {
             do {
                 try facade.rename(profile: selectedProfile!, newName: profileNameField.stringValue)
-                //profileSelector.selectedItem!.title = selectedProfile!.name
                 updateProfileList(name: profileNameField.stringValue)
-                NotificationCenter.default.post(name: .realodProfiles, object: nil)
             } catch {
                 NSLog(error.localizedDescription)
             }
@@ -184,11 +166,27 @@ class PreferencesWindow: NSWindowController {
     // MARK - Profile state saving and loading
     
     @IBAction func loadFromProfile(_ sender: NSButton) {
-        state.restore(fromProfile: selectedProfile!)
+        selectedProfile?.restoreAll()
+    }
+    
+    @IBAction func loadSelectedFromProfile(_ sender: NSButton) {
+        let selectedRows = table.selectedRowIndexes
+        for index in selectedRows {
+            let app = selectedProfile!.apps[index]
+            try? app.data.restore()
+        }
     }
     
     @IBAction func saveToProfile(_ sender: NSButton) {
-        state.save(toProfile: selectedProfile!)
+        selectedProfile?.copy(apps: self.selectedProfile!.apps)
+    }
+    
+    @IBAction func saveSelectedToProfile(_ sender: NSButton) {
+        let selectedRows = table.selectedRowIndexes
+        for index in selectedRows {
+            let app = selectedProfile!.apps[index]
+            try? app.data.copy()
+        }
     }
     
     // MARK - Table control
@@ -212,7 +210,11 @@ class PreferencesWindow: NSWindowController {
         if (dialog.runModal() == NSApplication.ModalResponse.OK) {
             if let path = dialog.url?.path {
                 if tableSegmentControl.selectedSegment == 0 {
-                    facade.addApp(toProfile: selectedProfile!, withPath: path)
+                    do {
+                        try facade.addApp(toProfile: selectedProfile!, withPath: path)
+                    } catch {
+                        NSLog(error.localizedDescription)
+                    }
                 } else {
                     facade.addWorkflow(toProfile: selectedProfile!, withPath: path)
                 }
@@ -224,22 +226,25 @@ class PreferencesWindow: NSWindowController {
         }
     }
     
-    @IBAction func removeItem(_ sender: NSButton) {
-        let selectedRow = table.selectedRow
-        if selectedRow == -1 {
-            return
+    @IBAction func removeItems(_ sender: NSButton) {
+        let selectedRows = table.selectedRowIndexes
+        let isApp = tableSegmentControl.selectedSegment == TableSegmentControl.app.rawValue ? true : false
+        
+        var entities: [Runable] = []
+        for index in selectedRows {
+            if isApp {
+                entities.append(selectedProfile!.apps[index])
+            } else {
+                entities.append(selectedProfile!.workflows[index])
+            }
         }
         
-        if tableSegmentControl.selectedSegment == 0 {
-            let app = selectedProfile!.apps[selectedRow]
-            try! realm.write {
-                selectedProfile!.apps.remove(at: selectedRow)
-                realm.delete(app)
-            }
+        if isApp {
+            facade.remove(apps: entities as! [App], fromProfile: selectedProfile!)
         } else {
-            let workflow = selectedProfile!.workflows[selectedRow]
-            facade.remove(workflow: workflow, fromProfile: selectedProfile!)
+            facade.remove(workflows: entities as! [Workflow], fromProfile: selectedProfile!)
         }
+        
         updateTable(tableSegmentControl)
     }
     
@@ -247,9 +252,9 @@ class PreferencesWindow: NSWindowController {
         print(sender.selectedSegment)
         
         if sender.selectedSegment == 0 {
-            tableData = Array((selectedProfile?.apps)!) as [NameProtocol]
+            tableData = Array((selectedProfile?.apps)!) as [Runable]
         } else {
-            tableData = Array((selectedProfile?.workflows)!) as [NameProtocol]
+            tableData = Array((selectedProfile?.workflows)!) as [Runable]
         }
         
         DispatchQueue.main.async {
@@ -257,19 +262,7 @@ class PreferencesWindow: NSWindowController {
         }
     }
     
-    
     // MARK - Methods
-    
-    func confirmationDialog(question: String, text: String, completionHandler handler: @escaping ((NSApplication.ModalResponse) -> Void)) {
-        let alert = NSAlert()
-        alert.messageText = question
-        alert.informativeText = text
-        alert.alertStyle = .warning
-        alert.addButton(withTitle: "dialog.ok".localized)
-        alert.addButton(withTitle: "dialog.cancel".localized)
-        
-        alert.beginSheetModal(for: window!, completionHandler: handler)
-    }
     
     func updateProfileList(name: String? = nil) {
         profileSelector.removeAllItems()
@@ -285,7 +278,6 @@ class PreferencesWindow: NSWindowController {
         if selectedProfile != nil {
             selectedProfileChanged(profileSelector)
         }
-        NotificationCenter.default.post(name: .realodProfiles, object: nil)
     }
 }
 
@@ -308,13 +300,19 @@ extension PreferencesWindow: NSTableViewDataSource, NSTableViewDelegate {
         } else {
             let view = tableView.makeView(withIdentifier: .icon, owner: self) as! NSImageView
             
-            guard let file = NSWorkspace.shared.fullPath(forApplication: item.name) else {
+            if let app = item as? App  {
+                view.image = NSWorkspace.shared.icon(forFile: app.path)
+            } else {
                 view.image = NSImage(named: NSImage.folderSmartName)
-                return view
             }
             
-            view.image = NSWorkspace.shared.icon(forFile: file)
             return view
         }
     }
+}
+
+// MARK - Window segment control
+enum TableSegmentControl: Int {
+    case app
+    case workflow
 }

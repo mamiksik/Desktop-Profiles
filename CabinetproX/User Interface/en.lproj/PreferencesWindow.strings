@@ -1,24 +1,72 @@
 
-/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "0yG-yW-EUg"; */
-"0yG-yW-EUg.title" = "Text Cell";
+/* Class = "NSButtonCell"; title = "Selected"; ObjectID = "43Z-vf-2iT"; */
+"43Z-vf-2iT.title" = "Selected";
+
+/* Class = "NSMenuItem"; title = "Red"; ObjectID = "615-ky-JPo"; */
+"615-ky-JPo.title" = "Red";
+
+/* Class = "NSSegmentedCell"; 61z-1R-iiE.ibShadowedLabels[0] = "Applications"; ObjectID = "61z-1R-iiE"; */
+"61z-1R-iiE.ibShadowedLabels[0]" = "Applications";
+
+/* Class = "NSSegmentedCell"; 61z-1R-iiE.ibShadowedLabels[1] = "Workflows"; ObjectID = "61z-1R-iiE"; */
+"61z-1R-iiE.ibShadowedLabels[1]" = "Workflows";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "7h7-bo-VDv"; */
+"7h7-bo-VDv.title" = "Save";
+
+/* Class = "NSTextFieldCell"; title = "Night shift"; ObjectID = "7qn-jW-tg8"; */
+"7qn-jW-tg8.title" = "Night shift";
+
+/* Class = "NSMenuItem"; title = "Blue"; ObjectID = "9hx-ar-v6n"; */
+"9hx-ar-v6n.title" = "Blue";
+
+/* Class = "NSMenuItem"; title = "Pink"; ObjectID = "AYJ-yu-wIg"; */
+"AYJ-yu-wIg.title" = "Pink";
 
 /* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "CUP-wq-vvV"; */
 "CUP-wq-vvV.title" = "Text Cell";
 
+/* Class = "NSMenuItem"; title = "Green"; ObjectID = "DQQ-uG-2pd"; */
+"DQQ-uG-2pd.title" = "Green";
+
 /* Class = "NSMenuItem"; title = "Profile 2"; ObjectID = "EGd-cM-3hi"; */
 "EGd-cM-3hi.title" = "Profile 2";
 
-/* Class = "NSButtonCell"; title = "Restore"; ObjectID = "EdW-X9-0tP"; */
-"EdW-X9-0tP.title" = "Restore";
+/* Class = "NSButtonCell"; title = "All"; ObjectID = "EdW-X9-0tP"; */
+"EdW-X9-0tP.title" = "All";
 
 /* Class = "NSWindow"; title = "Preferences"; ObjectID = "F0z-JX-Cv5"; */
 "F0z-JX-Cv5.title" = "Preferences";
 
-/* Class = "NSButtonCell"; title = "Save"; ObjectID = "FCh-th-L6K"; */
-"FCh-th-L6K.title" = "Record desktop";
+/* Class = "NSMenuItem"; title = "Orange"; ObjectID = "F7V-1Y-6yD"; */
+"F7V-1Y-6yD.title" = "Orange";
+
+/* Class = "NSButtonCell"; title = "All"; ObjectID = "FCh-th-L6K"; */
+"FCh-th-L6K.title" = "All";
 
 /* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "MEw-V5-W0S"; */
 "MEw-V5-W0S.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Dark mode"; ObjectID = "Nn4-Ui-Gif"; */
+"Nn4-Ui-Gif.title" = "Dark mode";
+
+/* Class = "NSTextFieldCell"; title = "Accent colour"; ObjectID = "One-dZ-Ehh"; */
+"One-dZ-Ehh.title" = "Accent colour";
+
+/* Class = "NSMenuItem"; title = "Turn on"; ObjectID = "PuG-Ca-GJb"; */
+"PuG-Ca-GJb.title" = "Turn on";
+
+/* Class = "NSMenuItem"; title = "Turn off"; ObjectID = "QMH-yV-IIV"; */
+"QMH-yV-IIV.title" = "Turn off";
+
+/* Class = "NSMenuItem"; title = "Default"; ObjectID = "QX1-a4-u4o"; */
+"QX1-a4-u4o.title" = "Default";
+
+/* Class = "NSMenuItem"; title = "Yellow"; ObjectID = "QwD-gS-7O4"; */
+"QwD-gS-7O4.title" = "Yellow";
+
+/* Class = "NSMenuItem"; title = "Default"; ObjectID = "RHX-Cy-JYR"; */
+"RHX-Cy-JYR.title" = "Default";
 
 /* Class = "NSButtonCell"; title = "Delete"; ObjectID = "T5n-gQ-eZp"; */
 "T5n-gQ-eZp.title" = "Delete";
@@ -26,11 +74,50 @@
 /* Class = "NSMenuItem"; title = "Profile 1"; ObjectID = "Ton-88-zqe"; */
 "Ton-88-zqe.title" = "Profile 1";
 
+/* Class = "NSButtonCell"; title = "Close other aplications"; ObjectID = "WDL-HP-pFn"; */
+"WDL-HP-pFn.title" = "Close other aplications";
+
 /* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "WiO-Vg-NSQ"; */
 "WiO-Vg-NSQ.title" = "Table View Cell";
+
+/* Class = "NSMenuItem"; title = "On"; ObjectID = "aQz-af-zfi"; */
+"aQz-af-zfi.title" = "On";
 
 /* Class = "NSButtonCell"; title = "Add"; ObjectID = "boC-Mj-GNp"; */
 "boC-Mj-GNp.title" = "Add";
 
+/* Class = "NSMenuItem"; title = "Purple"; ObjectID = "cmO-aR-kq3"; */
+"cmO-aR-kq3.title" = "Purple";
+
+/* Class = "NSTextFieldCell"; title = "Shortcut"; ObjectID = "fAO-aM-uHA"; */
+"fAO-aM-uHA.title" = "Shortcut";
+
+/* Class = "NSButtonCell"; title = "Selected"; ObjectID = "gE4-8h-q8D"; */
+"gE4-8h-q8D.title" = "Selected";
+
+/* Class = "NSTextFieldCell"; title = "Save state"; ObjectID = "i4f-kF-OCB"; */
+"i4f-kF-OCB.title" = "Save state";
+
+/* Class = "NSTextFieldCell"; title = "Restore state"; ObjectID = "im4-2Y-WaF"; */
+"im4-2Y-WaF.title" = "Restore state";
+
+/* Class = "NSTextFieldCell"; title = "Name"; ObjectID = "lzI-QK-r36"; */
+"lzI-QK-r36.title" = "Name";
+
+/* Class = "NSMenuItem"; title = "Graphite"; ObjectID = "nyA-px-5ih"; */
+"nyA-px-5ih.title" = "Graphite";
+
+/* Class = "NSMenuItem"; title = "Off"; ObjectID = "o8n-VC-ZH5"; */
+"o8n-VC-ZH5.title" = "Off";
+
 /* Class = "NSMenuItem"; title = "Profile 3"; ObjectID = "ref-Uu-WPx"; */
 "ref-Uu-WPx.title" = "Profile 3";
+
+/* Class = "NSBox"; title = "Profile settings"; ObjectID = "uci-SC-7db"; */
+"uci-SC-7db.title" = "Profile settings";
+
+/* Class = "NSBox"; title = "Profile select"; ObjectID = "vMU-ZD-cdC"; */
+"vMU-ZD-cdC.title" = "Profile select";
+
+/* Class = "NSMenuItem"; title = "Default"; ObjectID = "x5o-vI-cRg"; */
+"x5o-vI-cRg.title" = "Default";

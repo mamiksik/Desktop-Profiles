@@ -1,32 +1,4 @@
-//
-//  Expections.swift
-//  Maturitka
-//
-//  Created by Martin Miksik on 30/12/2018.
-//  Copyright © 2018 Martin Miksik. All rights reserved.
-//
-
-import Foundation
-
-// MARK - Errors
-
-enum ProfileError: Error {
-    case profileWithSameNameAlreadyExiest
-}
-
-// MARK - Scripts
-
-enum Scripts : String {
-    case DarkMode = "DarkMode"
-    case AccentColour = "AccentColour"
-    case NightShift = "NightShift"
-    case AutoHideDock = "AutoHideDock"
-    case OpenPreferences = "OpenPreferences"
-    case QuitPreferences = "QuitPreferences"
-}
-
 // MARK - Entities
-
 @objc enum Options: Int, CaseIterable, CustomStringConvertible {
     case keep
     case setTrue
@@ -41,7 +13,7 @@ enum Scripts : String {
     }
 }
 
-@objc enum Color: Int {
+@objc enum Color: Int, CustomStringConvertible {
     case keep
     case blue
     case purple

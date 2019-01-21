@@ -13,8 +13,9 @@ import Magnet
 class StatusMenu: NSObject, NSWindowDelegate {
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-    let states = MMStates()
+    let facade = Facade.shared
     var preferencesWindow : PreferencesWindow? = nil
+    var notificationToken: NotificationToken? = nil
     
     @IBOutlet weak var statusMenu: NSMenu!
     var statusMenuOriginalMenu: [NSMenuItem]?
@@ -26,7 +27,9 @@ class StatusMenu: NSObject, NSWindowDelegate {
         statusMenuOriginalMenu = statusMenu.items
         constructMenu()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(realodProfiles(notfication:)), name: .realodProfiles, object: nil)
+        notificationToken = facade.realm.observe { notification, realm in
+            self.constructMenu()
+        }
         
     }
     
@@ -40,8 +43,8 @@ class StatusMenu: NSObject, NSWindowDelegate {
         statusMenu.addItem(NSMenuItem.separator())
         
         for profile in realm.objects(Profile.self).reversed() {
-            let profItem = NSMenuItem(title: profile.name, action: #selector(states.restoreFromProfile(_:)), keyEquivalent: "")
-            profItem.target = states.self
+            let profItem = NSMenuItem(title: profile.name, action: #selector(self.restoreFromProfile(_:)), keyEquivalent: "")
+            profItem.target = self
 
             if profile.keyCombo != nil {
                 let hotKey = HotKey(identifier: profile.name, keyCombo: profile.keyCombo!, target: self, action: #selector(self.restoreFromProfileHotKey(_:)))
@@ -71,7 +74,6 @@ class StatusMenu: NSObject, NSWindowDelegate {
         
     }
     
-    
     //MARK - Saves memory
     func windowWillClose(_ notification: Notification) {
         preferencesWindow = nil
@@ -85,29 +87,15 @@ class StatusMenu: NSObject, NSWindowDelegate {
         constructMenu()
     }
     
-    // MARK - Fix Magnet can not call objc method on instance variable - that is bug in Magnet library
-    @objc func restoreFromProfileHotKey(_ sender: Any) {
-        states.restoreFromProfileHotKey(sender)
-    }
-}
-
-extension MMStates {
-    @objc func saveToProfile(_ sender: NSMenuItem) {
-        let facade = Facade.shared
-        let profile = facade.getBy(profileName: sender.title)
-        save(toProfile: profile!)
-    }
-    
     @objc func restoreFromProfile(_ sender: NSMenuItem) {
-        let facade = Facade.shared
-        let profile = facade.getBy(profileName: sender.title)
-        restore(fromProfile: profile!)
+        guard let profile = facade.getBy(profileName: sender.title) else { return }
+        profile.restoreAll()
     }
     
+    // MARK - Fix Magnet can not call objc method on instance variable - that is probably an bug in Magnet library
     @objc func restoreFromProfileHotKey(_ sender: Any) {
         guard let hotKey = sender as? HotKey else { return }
-        let facade = Facade.shared
-        let profile = facade.getBy(profileName: hotKey.identifier)
-        restore(fromProfile: profile!)
+        guard let profile = facade.getBy(profileName: hotKey.identifier) else { return }
+        profile.restoreAll()
     }
 }

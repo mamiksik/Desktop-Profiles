@@ -52,16 +52,21 @@ final class Facade {
         }
     }
     
-    func addApp(toProfile: Profile, withPath: String) {
+    func addApp(toProfile: Profile, withPath: String) throws{
         guard let bundle = Bundle(path: withPath) else {
             return
         }
         
         let app = App()
-        app.name = bundle.infoDictionary![kCFBundleNameKey as String] as! String
-        app.bundleIdentifier = bundle.bundleIdentifier!
+        guard let name = bundle.infoDictionary![kCFBundleNameKey as String] as? String else {
+            throw AppError.cantGetAppName
+        }
         
-        try! realm.write {
+        app.name = name
+        app.bundleIdentifier = bundle.bundleIdentifier!
+        app.path = withPath
+        
+        try realm.write {
             toProfile.apps.append(app)
         }
     }
@@ -84,6 +89,30 @@ final class Facade {
             }
         } catch {
             NSLog(error.localizedDescription)
+        }
+    }
+    
+    func remove(apps: [App], fromProfile: Profile)
+    {
+        for app in apps {
+            remove(app: app, fromProfile: fromProfile)
+        }
+    }
+    
+    func remove(app: App, fromProfile: Profile)
+    {
+        do {
+            try? app.data.clean()
+            try realm.write { realm.delete(app) }
+        } catch {
+            NSLog(error.localizedDescription)
+        }
+    }
+    
+    func remove(workflows: [Workflow], fromProfile: Profile)
+    {
+        for workflow in workflows {
+            remove(workflow: workflow, fromProfile: fromProfile)
         }
     }
     

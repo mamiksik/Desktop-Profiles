@@ -19,10 +19,6 @@ extension NSUserInterfaceItemIdentifier {
     static let icon = NSUserInterfaceItemIdentifier(rawValue: "icon")
 }
 
-extension Notification.Name {
-    static let realodProfiles = Notification.Name("realoadProfiles")
-}
-
 // MARK - Localization
 
 extension String {

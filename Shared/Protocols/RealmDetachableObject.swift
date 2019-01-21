@@ -8,10 +8,6 @@
 
 import Foundation
 
-protocol NameProtocol {
-    var name: String { get set }
-}
-
 protocol DetachableObject: AnyObject {
     func detached() -> Self
 }
