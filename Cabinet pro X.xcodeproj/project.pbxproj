@@ -110,6 +110,8 @@
 		5B3A972021CADAA100239138 /* StatusMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenu.swift; sourceTree = "<group>"; };
 		5B3A972A21CAE72200239138 /* Runable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Runable.swift; sourceTree = "<group>"; };
 		5B3A973621CBDD9300239138 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		5B3B242C21F664B30085F247 /* Themes.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Themes.gif; sourceTree = "<group>"; };
+		5B3B242D21F664BC0085F247 /* iTerm.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = iTerm.gif; sourceTree = "<group>"; };
 		5B8E04B821F62F1D005F7CDC /* ChromeStateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromeStateData.swift; sourceTree = "<group>"; };
 		5B8E04BC21F64ADE005F7CDC /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		5B9E05D421EB692E009169AC /* MMSpaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMSpaces.swift; sourceTree = "<group>"; };
@@ -248,6 +250,15 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		5B3B242B21F6648B0085F247 /* readme-assets */ = {
+			isa = PBXGroup;
+			children = (
+				5B3B242D21F664BC0085F247 /* iTerm.gif */,
+				5B3B242C21F664B30085F247 /* Themes.gif */,
+			);
+			path = "readme-assets";
+			sourceTree = "<group>";
+		};
 		5BB34C9E21E94F7900ABCC30 /* Spaces */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,12 +273,13 @@
 		5BC2D1C721C1165C00C5A255 = {
 			isa = PBXGroup;
 			children = (
-				5B8E04BC21F64ADE005F7CDC /* readme.md */,
 				5B3A974A21CBDEFB00239138 /* Shared */,
 				5BC2D1D221C1165C00C5A255 /* CabinetproX */,
 				5BC2D1D121C1165C00C5A255 /* Products */,
 				8329C9A7EDAF54269599E7A2 /* Pods */,
 				31B05F57151A20A0BDF50D50 /* Frameworks */,
+				5B8E04BC21F64ADE005F7CDC /* readme.md */,
+				5B3B242B21F6648B0085F247 /* readme-assets */,
 			);
 			sourceTree = "<group>";
 		};
