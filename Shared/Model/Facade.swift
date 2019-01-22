@@ -39,14 +39,14 @@ final class Facade {
             profile.name = newName
         }
         
-        var oldLocation = Utils.bundleUrl.appendingPathComponent("Workflows/\(oldName)")
-        var newLocation = Utils.bundleUrl.appendingPathComponent("Workflows/\(newName)")
-        if fm.fileExists(atPath: oldLocation.path) {
-            try? fm.moveItem(at: oldLocation, to: newLocation)
-        }
+//        var oldLocation = Utils.bundleUrl.appendingPathComponent("Workflows/\(oldName)")
+//        var newLocation = Utils.bundleUrl.appendingPathComponent("Workflows/\(newName)")
+//        if fm.fileExists(atPath: oldLocation.path) {
+//            try? fm.moveItem(at: oldLocation, to: newLocation)
+//        }
         
-        oldLocation = Utils.bundleUrl.appendingPathComponent("Saved Application State/\(oldName)")
-        newLocation = Utils.bundleUrl.appendingPathComponent("Saved Application State/\(newName)")
+        var oldLocation = Utils.bundleUrl.appendingPathComponent("\(oldName)")
+        var newLocation = Utils.bundleUrl.appendingPathComponent("\(newName)")
         if fm.fileExists(atPath: oldLocation.path) {
             try? fm.moveItem(at: oldLocation, to: newLocation)
         }
@@ -102,7 +102,7 @@ final class Facade {
     func remove(app: App, fromProfile: Profile)
     {
         do {
-            try? app.data.clean()
+            try? app.stateData.clean()
             try realm.write { realm.delete(app) }
         } catch {
             NSLog(error.localizedDescription)

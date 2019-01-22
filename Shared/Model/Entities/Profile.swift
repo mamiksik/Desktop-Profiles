@@ -50,9 +50,8 @@ extension Profile {
 extension Profile {
     
     func copy<T: Sequence>(apps: T) where T.Element == App{
-        let fileQueue = DispatchQueue(label: CustomQueue.files.rawValue)
         for app in self.apps {
-            try! app.data.copy()
+            try! app.stateData.copy()
         }
     }
     
@@ -93,7 +92,7 @@ extension Profile {
     
     func restore<T: Sequence>(apps: T) where T.Element == App {
         for app in apps {
-            try? app.data.restore()
+            try? app.stateData.restore()
         }
     }
     

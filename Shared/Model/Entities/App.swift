@@ -29,7 +29,7 @@ extension App {
 
 // MARK - Custom methods
 extension App {
-    var data: CustomApplicationStateData {
+    var stateData: CustomApplicationStateData {
         switch bundleIdentifier {
         case AppSpecificBehaviour.Chrome.rawValue:
             return ChromeStateData(self)

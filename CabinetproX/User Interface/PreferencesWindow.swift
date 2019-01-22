@@ -173,7 +173,7 @@ class PreferencesWindow: NSWindowController {
         let selectedRows = table.selectedRowIndexes
         for index in selectedRows {
             let app = selectedProfile!.apps[index]
-            try? app.data.restore()
+            try? app.stateData.restore()
         }
     }
     
@@ -185,7 +185,7 @@ class PreferencesWindow: NSWindowController {
         let selectedRows = table.selectedRowIndexes
         for index in selectedRows {
             let app = selectedProfile!.apps[index]
-            try? app.data.copy()
+            try? app.stateData.copy()
         }
     }
     
