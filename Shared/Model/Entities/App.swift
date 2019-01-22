@@ -48,6 +48,8 @@ extension App {
     }
     
     func open() throws {
-        try shellOut(to: "open -b \(self.bundleIdentifier)")
+        if AppSpecificBehaviour.Finder.rawValue != bundleIdentifier {
+            try shellOut(to: "open -b \(self.bundleIdentifier)")
+        }
     }
 }

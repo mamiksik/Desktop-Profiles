@@ -12,6 +12,7 @@ enum Scripts : String {
 //MARK - Apps requiring special treatment
 enum AppSpecificBehaviour: String {
     case Chrome = "com.google.Chrome"
+    case Finder = "com.apple.finder"
 }
 
 //MARK - Queue

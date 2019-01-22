@@ -35,10 +35,10 @@ final class Utils {
         }
         
         if parameters != nil {
-            let result = try! shellOut(to: "osascript \"\(path)\" \(parameters!)")
+            let result = try? shellOut(to: "osascript \"\(path)\" \(parameters!)")
             print(result)
         } else {
-            let result = try! shellOut(to: "osascript \"\(path)\"")
+            let result = try? shellOut(to: "osascript \"\(path)\"")
             print(result)
         }
     }

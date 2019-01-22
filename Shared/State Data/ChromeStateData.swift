@@ -16,7 +16,7 @@ final class ChromeStateData : CustomApplicationStateData {
     private let sourceFolder: URL
     private let bundleData: URL
     
-    private let chromeProfiles = ["Default", "Profile 1", "Profile 2", "Profile 3"]
+    private let chromeProfiles = ["Default", "Profile 1", "Profile 2", "Profile 3", "Profile 4", "Profile 5"]
     private let toCopy = ["Current Session", "Current Tabs"]
     
     init(_ app: App) {

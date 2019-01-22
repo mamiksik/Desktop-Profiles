@@ -22,7 +22,7 @@ final class MacOSDefaultSaveStateData: CustomApplicationStateData {
         
         let libraryFolder = self.fm.homeDirectoryForCurrentUser
         self.sourceData = libraryFolder.appendingPathComponent("Library/Saved Application State").path
-        self.bundleData = Utils.bundleUrl.appendingPathComponent("Saved Application State/").path
+        self.bundleData = Utils.bundleUrl.appendingPathComponent("\(profile.name)/SavedState/").path
     }
     
     
@@ -30,7 +30,7 @@ final class MacOSDefaultSaveStateData: CustomApplicationStateData {
         try? app.close()
         
         let source = pathToSource(forAppBundle: app.bundleIdentifier)
-        let copy = pathToCopy(forAppBundle: app.bundleIdentifier, forProfile: profile.name)
+        let copy = pathToCopy(forAppBundle: app.bundleIdentifier)
         
         let dirUrl = URL(fileURLWithPath: bundleData + "/\(profile.name)/")
         if !fm.fileExists(atPath: dirUrl.path) {
@@ -46,7 +46,6 @@ final class MacOSDefaultSaveStateData: CustomApplicationStateData {
             try? self.fm.copyItem(atPath: source, toPath: copy)
         }
         
-    
         try? app.open()
     }
     
@@ -54,7 +53,7 @@ final class MacOSDefaultSaveStateData: CustomApplicationStateData {
         try? app.close()
         
         let source = pathToSource(forAppBundle: app.bundleIdentifier)
-        let copy = pathToCopy(forAppBundle: app.bundleIdentifier, forProfile: profile.name)
+        let copy = pathToCopy(forAppBundle: app.bundleIdentifier)
         
         //TODO - Rises erroe
         if self.fm.isDeletableFile(atPath: source){
@@ -69,7 +68,7 @@ final class MacOSDefaultSaveStateData: CustomApplicationStateData {
     }
     
     func clean() throws {
-        let copy = pathToCopy(forAppBundle: app.bundleIdentifier, forProfile: profile.name)
+        let copy = pathToCopy(forAppBundle: app.bundleIdentifier)
         if fm.isDeletableFile(atPath: copy){
             try? fm.removeItem(atPath: copy)
         }
@@ -79,7 +78,7 @@ final class MacOSDefaultSaveStateData: CustomApplicationStateData {
         return "\(sourceData)/\(forAppBundle).savedState"
     }
     
-    private func pathToCopy(forAppBundle: String, forProfile: String) -> String {
-        return "\(bundleData)/\(forProfile)/" + forAppBundle + ".savedState"
+    private func pathToCopy(forAppBundle: String) -> String {
+        return "\(bundleData)/" + forAppBundle + ".savedState"
     }
 }
