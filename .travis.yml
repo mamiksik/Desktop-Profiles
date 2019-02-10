@@ -4,10 +4,8 @@ env:
 - LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8
 
 before_install:
-- rvm install ruby-2.2.2
 - gem install cocoapods
 - gem install xcpretty -N
-- brew update
 script:
 - set -o pipefail
 - xcodebuild -workspace DesktopProfiles.xcworkspace -list
