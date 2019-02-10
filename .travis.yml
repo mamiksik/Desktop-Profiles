@@ -5,8 +5,9 @@ env:
 
 before_install:
 - gem install cocoapods
-- gem install xcpretty -N
+- brew install xctool
 script:
 - set -o pipefail
 - xcodebuild -workspace DesktopProfiles.xcworkspace -list
-- xcodebuild -workspace DesktopProfiles.xcworkspace -scheme DesktopApp | xcpretty -c
+- xctool -workspace DesktopProfiles.xcworkspace -scheme DesktopApp clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+
