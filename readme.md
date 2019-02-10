@@ -4,7 +4,7 @@
 </p>
 
 # Desktop Profiles &middot; [![Build Status](https://travis-ci.org/mamiksik/CabinetProX.svg?branch=master)](https://travis-ci.org/mamiksik/CabinetProX) &middot; 
-The main objective of this app is to make transitions between different work environments easier. As a user, you can predefine any number of profiles which stores data about system settings such as dark mode, accent colour, night shift but also apps internal states and window arrangments.
+The main objective of this app is to make transitions between different work environments easier. As a user, you can predefine unlimited number of profiles. Each of them stores data about system settings such as dark mode, accent colour, night shift but also apps internal states and window arrangments. A profile can also run workflows.
 
 [Download prebuild version](https://github.com/mamiksik/CabinetProX/releases)
 
