@@ -5,9 +5,10 @@ env:
 
 before_install:
 - gem install cocoapods
-- brew install xctool
+- gem install xcpretty
+- gem install xcpretty-travis-formatter
 script:
 - set -o pipefail
 - xcodebuild -workspace DesktopProfiles.xcworkspace -list
-- xctool -workspace DesktopProfiles.xcworkspace -scheme DesktopApp clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+- xcodebuild -workspace DesktopProfiles.xcworkspace -scheme DesktopApp clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -f `xcpretty-travis-formatter`
 
