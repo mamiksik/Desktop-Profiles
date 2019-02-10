@@ -33,6 +33,7 @@
 		5BB34CAB21E951AA00ABCC30 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB34CAA21E951AA00ABCC30 /* Carbon.framework */; };
 		5BB34D6D21EB503100ABCC30 /* SpacesApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB34D6C21EB503100ABCC30 /* SpacesApi.m */; };
 		5BB34D7121EB531C00ABCC30 /* Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 5BB34D6F21EB507200ABCC30 /* Bridging-Header.h */; };
+		5BC01EF222106FB200EECCC1 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BC01EF122106FB200EECCC1 /* icon.png */; };
 		5BC2D1D821C1165F00C5A255 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BC2D1D721C1165F00C5A255 /* Assets.xcassets */; };
 		5BC2D1E421C11A9B00C5A255 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC2D1E321C11A9B00C5A255 /* String.swift */; };
 		5BC88D9021C2D0C5005B9EEA /* Facade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC88D8F21C2D0C5005B9EEA /* Facade.swift */; };
@@ -123,6 +124,7 @@
 		5BB34D7021EB525B00ABCC30 /* SpacesApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpacesApi.h; sourceTree = "<group>"; };
 		5BC01EEF22106A7E00EECCC1 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		5BC01EF022106EFF00EECCC1 /* Icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Icons; sourceTree = "<group>"; };
+		5BC01EF122106FB200EECCC1 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		5BC2D1D021C1165C00C5A255 /* DesktopProfiles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesktopProfiles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC2D1D721C1165F00C5A255 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BC2D1DC21C1165F00C5A255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 		5B3B242B21F6648B0085F247 /* doc_assets */ = {
 			isa = PBXGroup;
 			children = (
+				5BC01EF122106FB200EECCC1 /* icon.png */,
 				5B3B242D21F664BC0085F247 /* iTerm.gif */,
 				5B3B242C21F664B30085F247 /* Themes.gif */,
 			);
@@ -430,6 +433,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BC01EF222106FB200EECCC1 /* icon.png in Resources */,
 				5B10BE2521D7FF9200B68865 /* OpenPreferences.scpt in Resources */,
 				5BC2D1D821C1165F00C5A255 /* Assets.xcassets in Resources */,
 				5B10BE2621D7FF9200B68865 /* AccentColour.scpt in Resources */,

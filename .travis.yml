@@ -10,4 +10,5 @@ before_install:
 - brew update
 script:
 - set -o pipefail
+- xcodebuild -workspace DesktopProfiles.xcworkspace -list
 - xcodebuild -workspace DesktopProfiles.xcworkspace -scheme DesktopApp | xcpretty -c
