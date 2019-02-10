@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5953B45404EDCE3E0F5B3C22 /* Pods_DesktopProfiles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E94308ECE87E348B4217730 /* Pods_DesktopProfiles.framework */; };
 		5B10BE1B21D7E7F900B68865 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10BE1A21D7E7F900B68865 /* AppDelegate.swift */; };
 		5B10BE1E21D7F30600B68865 /* NightShift.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 5B10BE1D21D7F30600B68865 /* NightShift.scpt */; };
 		5B10BE2321D7FF9200B68865 /* QuitPreferences.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 5B10BE1F21D7FF9200B68865 /* QuitPreferences.scpt */; };
@@ -49,7 +50,6 @@
 		5BCEF0BD21D951220082534B /* Workflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCEF0B821D951220082534B /* Workflow.swift */; };
 		5BF37D4E21D250C7003E80A8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BF37D5021D250C7003E80A8 /* Localizable.strings */; };
 		5BFE32AA21F27449009B9956 /* KillAll.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 5BFE32A921F27449009B9956 /* KillAll.scpt */; };
-		6FB3A1C14374B7624722C1BC /* Pods_CabinetproX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F056554B81F2EBD90B4D55 /* Pods_CabinetproX.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -87,7 +87,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		54F056554B81F2EBD90B4D55 /* Pods_CabinetproX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CabinetproX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B10BE1A21D7E7F900B68865 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B10BE1D21D7F30600B68865 /* NightShift.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = NightShift.scpt; sourceTree = "<group>"; };
 		5B10BE1F21D7FF9200B68865 /* QuitPreferences.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = QuitPreferences.scpt; sourceTree = "<group>"; };
@@ -142,8 +141,9 @@
 		5BF37D5121D250CB003E80A8 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5BF37D5221D2543B003E80A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5BFE32A921F27449009B9956 /* KillAll.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = KillAll.scpt; sourceTree = "<group>"; };
-		5ED6A2ADEF8CAFB30C984448 /* Pods-CabinetproX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CabinetproX.debug.xcconfig"; path = "Target Support Files/Pods-CabinetproX/Pods-CabinetproX.debug.xcconfig"; sourceTree = "<group>"; };
-		FAD286F6029A1354D2ED0F11 /* Pods-CabinetproX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CabinetproX.release.xcconfig"; path = "Target Support Files/Pods-CabinetproX/Pods-CabinetproX.release.xcconfig"; sourceTree = "<group>"; };
+		6E94308ECE87E348B4217730 /* Pods_DesktopProfiles.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesktopProfiles.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8ACE45D22465BDFB2304C378 /* Pods-DesktopProfiles.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesktopProfiles.release.xcconfig"; path = "Target Support Files/Pods-DesktopProfiles/Pods-DesktopProfiles.release.xcconfig"; sourceTree = "<group>"; };
+		A95BF2965632E3068B6DEB8C /* Pods-DesktopProfiles.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesktopProfiles.debug.xcconfig"; path = "Target Support Files/Pods-DesktopProfiles/Pods-DesktopProfiles.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +156,7 @@
 				5BC88E9C21C57B94005B9EEA /* BBLBasics.framework in Frameworks */,
 				5BC88E9B21C57B7C005B9EEA /* BBLBasics.framework in Frameworks */,
 				5BC88E9721C57A5E005B9EEA /* Silica.framework in Frameworks */,
-				6FB3A1C14374B7624722C1BC /* Pods_CabinetproX.framework in Frameworks */,
+				5953B45404EDCE3E0F5B3C22 /* Pods_DesktopProfiles.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,7 +172,7 @@
 				5BC88E9A21C57B7C005B9EEA /* BBLBasics.framework */,
 				5BC88E9121C579C2005B9EEA /* Silica.framework */,
 				5B3A973621CBDD9300239138 /* NotificationCenter.framework */,
-				54F056554B81F2EBD90B4D55 /* Pods_CabinetproX.framework */,
+				6E94308ECE87E348B4217730 /* Pods_DesktopProfiles.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -351,8 +351,8 @@
 		8329C9A7EDAF54269599E7A2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5ED6A2ADEF8CAFB30C984448 /* Pods-CabinetproX.debug.xcconfig */,
-				FAD286F6029A1354D2ED0F11 /* Pods-CabinetproX.release.xcconfig */,
+				A95BF2965632E3068B6DEB8C /* Pods-DesktopProfiles.debug.xcconfig */,
+				8ACE45D22465BDFB2304C378 /* Pods-DesktopProfiles.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -364,14 +364,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BC2D1E021C1165F00C5A255 /* Build configuration list for PBXNativeTarget "DesktopProfiles" */;
 			buildPhases = (
-				1F4A1F7B50DA4107F5BCA5DE /* [CP] Check Pods Manifest.lock */,
+				92E413022501B93B696472B5 /* [CP] Check Pods Manifest.lock */,
 				5BC2D1CC21C1165C00C5A255 /* Sources */,
 				5BC2D1CD21C1165C00C5A255 /* Frameworks */,
 				5BC2D1CE21C1165C00C5A255 /* Resources */,
 				5BC88E8D21C57920005B9EEA /* CopyFiles */,
 				5BC88E9921C57A5E005B9EEA /* Embed Frameworks */,
 				5B3A974921CBDD9300239138 /* Embed App Extensions */,
-				CB4A916C69F3EEBB3DB456B7 /* [CP] Embed Pods Frameworks */,
+				0CC1D058A070E6A260DBFF48 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -452,7 +452,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1F4A1F7B50DA4107F5BCA5DE /* [CP] Check Pods Manifest.lock */ = {
+		0CC1D058A070E6A260DBFF48 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DesktopProfiles/Pods-DesktopProfiles-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/KeyHolder/KeyHolder.framework",
+				"${BUILT_PRODUCTS_DIR}/Magnet/Magnet.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ShellOut/ShellOut.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeyHolder.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Magnet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ShellOut.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DesktopProfiles/Pods-DesktopProfiles-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92E413022501B93B696472B5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -467,43 +497,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CabinetproX-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-DesktopProfiles-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CB4A916C69F3EEBB3DB456B7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CabinetproX/Pods-CabinetproX-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/KeyHolder/KeyHolder.framework",
-				"${BUILT_PRODUCTS_DIR}/Magnet/Magnet.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/ShellOut/ShellOut.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftSocket/SwiftSocket.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeyHolder.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Magnet.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ShellOut.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSocket.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CabinetproX/Pods-CabinetproX-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -692,7 +690,7 @@
 		};
 		5BC2D1E121C1165F00C5A255 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5ED6A2ADEF8CAFB30C984448 /* Pods-CabinetproX.debug.xcconfig */;
+			baseConfigurationReference = A95BF2965632E3068B6DEB8C /* Pods-DesktopProfiles.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -729,7 +727,7 @@
 		};
 		5BC2D1E221C1165F00C5A255 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FAD286F6029A1354D2ED0F11 /* Pods-CabinetproX.release.xcconfig */;
+			baseConfigurationReference = 8ACE45D22465BDFB2304C378 /* Pods-DesktopProfiles.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

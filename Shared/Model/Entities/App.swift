@@ -1,6 +1,5 @@
 import Foundation
 import RealmSwift
-import SwiftSocket
 import ShellOut
 
 // MARK - Realm entity declaration
