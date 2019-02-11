@@ -8,6 +8,11 @@ The main objective of this app is to make transitions between different work env
 
 [Download prebuild version](https://github.com/mamiksik/CabinetProX/releases)
 
+# iOS Example
+I can see potential in this app not only for power users but also for classrooms and teachers. Imagine teacher walking in and by simply clicking one button all computers in the classroom would, for example, open IDE, GIT GUI and so on. Students could get to work without any necessary delay.
+
+In order to materialize my vision I wrote a simple proof of concept. It is an iOS app where you can type profile name and all computers on the same wifi will switch to that profile. 
+
 # Demo
 
 ## Profile changing system settings 
