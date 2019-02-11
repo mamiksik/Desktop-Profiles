@@ -28,7 +28,7 @@ final class Utils {
 
     static func runAppleScript(withName: Scripts, parameters: String? = nil){
         let path = Bundle.main.url(forResource: withName.rawValue, withExtension: "scpt")!.path
-        print(path)
+//        print(path)
         
         if parameters == Options.keep.description {
             return
@@ -36,10 +36,10 @@ final class Utils {
         
         if parameters != nil {
             let result = try? shellOut(to: "osascript \"\(path)\" \(parameters!)")
-            print(result)
+//            print(result)
         } else {
             let result = try? shellOut(to: "osascript \"\(path)\"")
-            print(result)
+//            print(result)
         }
     }
     
