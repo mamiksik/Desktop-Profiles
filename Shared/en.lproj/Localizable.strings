@@ -11,3 +11,6 @@
 
 "preferences.alert.deleteProfile.question" = "Delete profile?";
 "preferences.alert.deleteProfile.text" = "Delete profile and it's saved application states. This operation can not be undone.";
+
+"dialog.cancel" = "Cancel";
+"dialog.ok" = "Confirm";

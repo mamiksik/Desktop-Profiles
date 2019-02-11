@@ -12,12 +12,17 @@ import Magnet
 
 class StatusMenu: NSObject, NSWindowDelegate {
     
+    // MARK - Outlets
+    @IBOutlet weak var statusMenu: NSMenu!
+    
+    // MARK - const
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     let facade = Facade.shared
+    let instanceService = InstanceService()
+    
+    // MARK - variables
     var preferencesWindow : PreferencesWindow? = nil
     var notificationToken: NotificationToken? = nil
-    
-    @IBOutlet weak var statusMenu: NSMenu!
     var statusMenuOriginalMenu: [NSMenuItem]?
     
     override func awakeFromNib() {
@@ -31,11 +36,12 @@ class StatusMenu: NSObject, NSWindowDelegate {
             self.constructMenu()
         }
         
+        instanceService.delegate = self
+        
     }
     
     func constructMenu() {
-        
-        let realm = Facade.shared.realm
+        let realm = facade.realm
         HotKeyCenter.shared.unregisterAll()
         
         statusMenu.removeAllItems()
@@ -88,14 +94,33 @@ class StatusMenu: NSObject, NSWindowDelegate {
     }
     
     @objc func restoreFromProfile(_ sender: NSMenuItem) {
-        guard let profile = facade.getBy(profileName: sender.title) else { return }
-        profile.restoreAll()
+        restore(sender.title)
     }
     
     // MARK - Fix Magnet can not call objc method on instance variable - that is probably an bug in Magnet library
     @objc func restoreFromProfileHotKey(_ sender: Any) {
         guard let hotKey = sender as? HotKey else { return }
-        guard let profile = facade.getBy(profileName: hotKey.identifier) else { return }
+        restore(hotKey.identifier)
+    }
+    
+    func restore(_ profileName: String){
+        guard let profile = facade.getBy(profileName: profileName) else { return }
         profile.restoreAll()
+    }
+}
+
+extension StatusMenu : InstanceServiceDelegate {
+    
+    func connectedDevicesChanged(manager: InstanceService, connectedDevices: [String]) {
+        OperationQueue.main.addOperation {
+            print("Connections: \(connectedDevices)")
+        }
+    }
+    
+    func profileChanged(manager: InstanceService, profileName: String) {
+        OperationQueue.main.addOperation {
+            self.restore(profileName)
+            NSLog("%@", "Value received: \(profileName)")
+        }
     }
 }
