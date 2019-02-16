@@ -81,12 +81,8 @@ extension Profile {
     }
     
     func restore<T: Sequence>(workflows: T) where T.Element == Workflow {
-        let scriptQueue = DispatchQueue(label: CustomQueue.appleScript.rawValue)        
         for workflow in workflows {
-            let path = workflow.path.replacingOccurrences(of: " ", with: "\\ ")
-            scriptQueue.async {
-                try! shellOut(to: "/usr/bin/automator", arguments: [path])
-            }
+            try? workflow.run()
         }
     }
     
