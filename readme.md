@@ -8,6 +8,8 @@ The main objective of this app is to make transitions between different work env
 
 [Download prebuild version](https://github.com/mamiksik/CabinetProX/releases)
 
+I also wrote a paper in which I am describing the development of the application from the beginning to end for [SOČ](http://www.soc.cz/) science competition. The paper is unfortunately available only in Czech and you can read it [here](doc_assets/soc.pdf).
+
 # iOS Example
 I can see potential in this app not only for power users but also for classrooms and teachers. Imagine teacher walking in and by simply clicking one button all computers in the classroom would, for example, open IDE, GIT GUI and so on. Students could get to work without any necessary delay.
 
