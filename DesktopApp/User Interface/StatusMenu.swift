@@ -18,7 +18,7 @@ class StatusMenu: NSObject, NSWindowDelegate {
     // MARK - const
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     let facade = Facade.shared
-    let instanceService = InstanceService()
+    var instanceService: InstanceService? = nil
     
     // MARK - variables
     var preferencesWindow : PreferencesWindow? = nil
@@ -36,8 +36,10 @@ class StatusMenu: NSObject, NSWindowDelegate {
             self.constructMenu()
         }
         
-        instanceService.delegate = self
-        
+        #if DEBUG
+        instanceService = InstanceService()
+        instanceService?.delegate = self
+        #endif
     }
     
     func constructMenu() {

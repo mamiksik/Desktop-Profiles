@@ -4,7 +4,12 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>com.mamiksik.Maturitka</string>
+		<string>com.mamiksik.DesktopProfiles</string>
+	</array>
+	<key>com.apple.security.automation.apple-events</key>
+	<array>
+		<string>com.apple.systempreferences</string>
+		<string>com.apple.SystemEvents</string>
 	</array>
 	<key>com.apple.security.scripting-targets</key>
 	<string></string>
@@ -12,11 +17,6 @@
 	<array>
 		<string>com.apple.systempreferences</string>
 		<string>com.apple.systemevents</string>
-	</array>
-	<key>com.apple.security.automation.apple-events</key>
-	<array>
-		<string>com.apple.systempreferences</string>
-		<string>com.apple.SystemEvents</string>
 	</array>
 </dict>
 </plist>

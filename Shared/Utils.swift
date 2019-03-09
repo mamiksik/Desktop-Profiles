@@ -15,7 +15,7 @@ import ShellOut
 
 final class Utils {
     
-    static let bundleUrl: URL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "com.mamiksik.Maturitka")!
+    static let bundleUrl: URL = Bundle.main.bundleURL //FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "com.mamiksik.DesktopProfiles")!
     static let saveDataUrl: URL = Utils.bundleUrl.appendingPathComponent("Saved Application State/")
     
     static var realmConfiguration: RealmSwift.Realm.Configuration {
