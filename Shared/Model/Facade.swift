@@ -45,8 +45,8 @@ final class Facade {
 //            try? fm.moveItem(at: oldLocation, to: newLocation)
 //        }
         
-        var oldLocation = Utils.bundleUrl.appendingPathComponent("\(oldName)")
-        var newLocation = Utils.bundleUrl.appendingPathComponent("\(newName)")
+        let oldLocation = Utils.bundleUrl.appendingPathComponent("\(oldName)")
+        let newLocation = Utils.bundleUrl.appendingPathComponent("\(newName)")
         if fm.fileExists(atPath: oldLocation.path) {
             try? fm.moveItem(at: oldLocation, to: newLocation)
         }
