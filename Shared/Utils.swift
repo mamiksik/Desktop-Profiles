@@ -20,26 +20,23 @@ final class Utils {
     
     static var realmConfiguration: RealmSwift.Realm.Configuration {
         get {
-            var config = Realm.Configuration()
-            config.fileURL = bundleUrl.appendingPathComponent("default.realm")
+            let config = Realm.Configuration()
+//            config.fileURL = bundleUrl.appendingPathComponent("default.realm")
             return config
         }
     }
 
     static func runAppleScript(withName: Scripts, parameters: String? = nil){
         let path = Bundle.main.url(forResource: withName.rawValue, withExtension: "scpt")!.path
-//        print(path)
         
         if parameters == Options.keep.description {
             return
         }
         
         if parameters != nil {
-            let result = try? shellOut(to: "osascript \"\(path)\" \(parameters!)")
-//            print(result)
+            _ = try? shellOut(to: "osascript \"\(path)\" \(parameters!)")
         } else {
-            let result = try? shellOut(to: "osascript \"\(path)\"")
-//            print(result)
+            _ = try? shellOut(to: "osascript \"\(path)\"")
         }
     }
     
