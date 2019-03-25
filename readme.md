@@ -22,6 +22,7 @@ With further development the app could also be utilized in classrooms allowing t
 ## Demo
 
 ### Profile changing system settings 
+
 |![](doc_assets/Themes.gif)|
 |:---:|
 
@@ -31,6 +32,7 @@ With further development the app could also be utilized in classrooms allowing t
 >Profiles can be invoked by a keyboard shortcut.
 
 ### Profile restoring app internal state and app layout
+
 |![](doc_assets/iTerm.gif)|
 |:---:|
 
@@ -38,7 +40,6 @@ With further development the app could also be utilized in classrooms allowing t
 |:---:|:---:|
 
 >In these examples invoking profile restored app state and window arrangement
-
 
 ### Profile opening multiple apps at once
 
