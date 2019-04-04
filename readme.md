@@ -4,35 +4,44 @@
 </p>
 
 # Desktop Profiles &middot; [![Build Status](https://travis-ci.org/mamiksik/Desktop-Profiles.svg?branch=master)](https://travis-ci.org/mamiksik/Desktop-Profiles)
-The main objective of this app is to make transitions between different work environments easier. As a user, you can predefine unlimited number of profiles. Each of them stores data about system settings such as dark mode, accent colour, night shift but also apps internal states and window arrangments. A profile can also run workflows. For futhure information either see [Demo](#demo) belowe or contact me directly. 
+The main purpose of this utility is to facilitate the transition among different workspaces (work environments). User-defined profiles are equipped with a container for caching apps internal states and its windows arrangement The profile also allows the user to predefine system settings e. g. theme, accent colour. Online demo is located [here](#demo).
 
-[Download prebuild version](https://github.com/mamiksik/CabinetProX/releases)
+When profile is invoked:
+- Windows arrangement and internal state of selected apps are restored
+- Settings for theme, accent colour, NightShift, are adjusted
+- Other applications are either closed or kept open
+- Assigned workflows are executed
 
-I also wrote a paper in which I am describing the development of the application from the beginning to end for [SOČ](http://www.soc.cz/) science fair. The paper is unfortunately available only in Czech and you can read it [here](doc_assets/soc.pdf).
+➡️  [Download prebuild version](https://github.com/mamiksik/CabinetProX/releases) ⬅️
 
-# iOS Example
-I can see potential in this app not only for power users but also for classrooms and teachers. Imagine teacher walking in and by simply clicking one button all computers in the classroom would, for example, open IDE, GIT GUI and so on. Students could get to work without any necessary delay.
+This app has been initially developed for science fare. The paper regarding the development can be found [here](doc_assets/soc.pdf) (available only in Czech).
 
-In order to materialize my vision I wrote a simple proof of concept. It is an iOS app where you can type profile name and all computers on the same wifi will switch to that profile. 
+## Remote control proof of concept 
+With further development the app could also be utilized in classrooms allowing teacher to switch student’s work environment remotely. The proof of concept is included in source code but if you wish to try it you would need to build the app yourself. 
 
-# Demo
+## Demo
 
-## Profile changing system settings 
-![](doc_assets/Themes.gif)
-<br>
-<img src="https://github.com/mamiksik/Desktop-Profiles/blob/master/doc_assets/Dark-A.png?raw=true" width="433"/> <img src="https://github.com/mamiksik/Desktop-Profiles/blob/master/doc_assets/Dark-B.png?raw=true" width="433"/> 
-<br>
-Profiles can be invoked by a keyboard shortcut.
+### Profile changing system settings 
 
-## Profile restoring app internal state and app layout
-![](doc_assets/iTerm.gif)
-<br>
-<img src="https://github.com/mamiksik/Desktop-Profiles/blob/master/doc_assets/Terminals-A.png?raw=true" width="433"/> <img src="https://github.com/mamiksik/Desktop-Profiles/blob/master/doc_assets/Terminal-B.png?raw=true" width="433"/> 
-<br>
-In these examples invoking profile restored app state and window arrangement
+|![](doc_assets/Themes.gif)|
+|:---:|
 
+| ![](doc_assets/Dark-A.png) | ![](doc_assets/Dark-B.png) |
+|:---:|:---:|
 
-## Profile opening multiple apps at once
-<img src="https://github.com/mamiksik/Desktop-Profiles/blob/master/doc_assets/KSI-A.png?raw=true" width="433"/> <img src="https://github.com/mamiksik/Desktop-Profiles/blob/master/doc_assets/KSI-B.png?raw=true" width="433"/> 
+>Profiles can be invoked by a keyboard shortcut.
 
+### Profile restoring app internal state and app layout
 
+|![](doc_assets/iTerm.gif)|
+|:---:|
+
+| ![](doc_assets/Terminals-A.png) | ![](doc_assets/Terminal-B.png) |
+|:---:|:---:|
+
+>In these examples invoking profile restored app state and window arrangement
+
+### Profile opening multiple apps at once
+
+| ![](doc_assets/KSI-A.png) | ![](doc_assets/KSI-B.png) |
+|:---:|:---:|
