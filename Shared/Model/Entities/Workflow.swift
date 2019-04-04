@@ -1,5 +1,4 @@
 import Foundation
-import RealmSwift
 import ShellOut
 
 final class Workflow: BaseEntity, Runable {

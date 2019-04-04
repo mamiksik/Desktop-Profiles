@@ -8,8 +8,8 @@
 
 import Foundation
 import Cocoa
-import RealmSwift
 import Magnet
+import RealmSwift
 
 // MARK - Nested types
 

@@ -7,8 +7,8 @@
 //
 
 import Cocoa
-import RealmSwift
 import Magnet
+import RealmSwift
 
 class StatusMenu: NSObject, NSWindowDelegate {
     

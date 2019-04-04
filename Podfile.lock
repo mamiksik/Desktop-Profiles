@@ -2,17 +2,11 @@ PODS:
   - KeyHolder (3.0.1):
     - Magnet (~> 2.3)
   - Magnet (2.3.0)
-  - Realm (3.11.0):
-    - Realm/Headers (= 3.11.0)
-  - Realm/Headers (3.11.0)
-  - RealmSwift (3.11.0):
-    - Realm (= 3.11.0)
   - ShellOut (2.0.0)
   - SwiftLint (0.27.0)
 
 DEPENDENCIES:
   - KeyHolder
-  - RealmSwift
   - ShellOut
   - SwiftLint
 
@@ -20,19 +14,15 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - KeyHolder
     - Magnet
-    - Realm
-    - RealmSwift
     - ShellOut
     - SwiftLint
 
 SPEC CHECKSUMS:
   KeyHolder: 142932db4eac7420b003e2eae94c9a61b8b53cb1
   Magnet: 85344b019d023e26062199aeb5b4ad1f8d41c5df
-  Realm: 92f09a102692b96a9a10e9617f214f15c5ab85fc
-  RealmSwift: 5f0481cd658bb751c509314b964a35eaa264d2cf
   ShellOut: 1393eefc56892e80d85339e233d3935e2e1ff6f9
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
 
-PODFILE CHECKSUM: 618ef1d4b9f6a71d805568bf9b6ea3f7099509eb
+PODFILE CHECKSUM: 73273605e5bf12296f325e0fa4b1551ecc55d61a
 
-COCOAPODS: 1.6.0.beta.1
+COCOAPODS: 1.6.1
