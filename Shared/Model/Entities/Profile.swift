@@ -1,7 +1,7 @@
 import Foundation
-import RealmSwift
 import Magnet
 import ShellOut
+import RealmSwift
 
 // MARK - Realm entity declaration
 class Profile: BaseEntity {

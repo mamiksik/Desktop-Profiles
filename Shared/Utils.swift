@@ -8,19 +8,20 @@
 
 import Foundation
 import Cocoa
-import RealmSwift
 import ShellOut
+import RealmSwift
 
 // MARK - Utils
 
 final class Utils {
     
-    static let bundleUrl: URL = Bundle.main.bundleURL //FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "com.mamiksik.DesktopProfiles")!
+    static let bundleUrl: URL = Bundle.main.resourceURL! //Add check for optional
     static let saveDataUrl: URL = Utils.bundleUrl.appendingPathComponent("Saved Application State/")
     
     static var realmConfiguration: RealmSwift.Realm.Configuration {
         get {
             let config = Realm.Configuration()
+            print(config.fileURL)
 //            config.fileURL = bundleUrl.appendingPathComponent("default.realm")
             return config
         }

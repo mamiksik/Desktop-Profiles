@@ -1,6 +1,7 @@
 import Foundation
-import RealmSwift
 import ShellOut
+import Cocoa
+import RealmSwift
 
 // MARK - Realm entity declaration
 final class App: BaseEntity, Runable {
@@ -28,12 +29,21 @@ extension App {
 
 // MARK - Custom methods
 extension App {
+    
+    var isSanboxed: Bool {
+        return Bundle(path: path)?.ob_isSandboxed() ?? false
+    }
+
     var stateData: CustomApplicationStateData {
         switch bundleIdentifier {
         case AppSpecificBehaviour.Chrome.rawValue:
             return ChromeStateData(self)
         default:
-            return MacOSDefaultSaveStateData(self)
+            if isSanboxed {
+                return SanboxedStateData(self)
+            } else {
+                return DefaultStateData(self)
+            }
         }
     }
     

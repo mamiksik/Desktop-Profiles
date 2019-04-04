@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import RealmSwift
 import KeyHolder
 
 class PreferencesWindow: NSWindowController {
