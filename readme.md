@@ -14,7 +14,9 @@ When profile is invoked:
 
 ➡️  [Download prebuild version](https://github.com/mamiksik/CabinetProX/releases) ⬅️
 
-This app has been initially developed for science fare. The paper regarding the development can be found [here](doc_assets/soc.pdf) (available only in Czech).
+This app has been initially developed for science fare. (The paper regarding the development is available only in Czech).
+
+➡️  [Read it here](doc_assets/soc.pdf) ⬅️
 
 ## Remote control proof of concept 
 With further development the app could also be utilized in classrooms allowing teacher to switch student’s work environment remotely. The proof of concept is included in source code but if you wish to try it you would need to build the app yourself. 
