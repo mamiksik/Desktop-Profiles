@@ -7,13 +7,13 @@ import RealmSwift
 class Profile: BaseEntity {
     @objc dynamic var name = ""
     @objc dynamic var defaultProfile = false
-    @objc dynamic var darkMode : Options = .keep
-    @objc dynamic var nightShift : Options = .keep
-    @objc dynamic var accentColour : Color = .keep
-    @objc dynamic var closeOtherApps : Bool = false
+    @objc dynamic var darkMode: Options = .keep
+    @objc dynamic var nightShift: Options = .keep
+    @objc dynamic var accentColour: Color = .keep
+    @objc dynamic var closeOtherApps: Bool = false
     
-    @objc dynamic var shortcutKeyCode : Int = -1
-    @objc dynamic var shortcutModifierCode : Int = -1
+    @objc dynamic var shortcutKeyCode: Int = -1
+    @objc dynamic var shortcutModifierCode: Int = -1
     
     let apps = List<App>()
     let workflows = List<Workflow>()
@@ -38,45 +38,48 @@ class Profile: BaseEntity {
     }
 }
 
-// MARK - Comperable
+// MARK: Comperable
 extension Profile {
-    static func ==(lhs: Profile, rhs: Profile) -> Bool {
+    static func == (lhs: Profile, rhs: Profile) -> Bool {
         return lhs.name == rhs.name
+    }
+
+    static func != (lhs: Profile, rhs: Profile) -> Bool {
+        return lhs.name != rhs.name
     }
 }
 
-
-//MARK - Custom Profile methods
+// MARK: Custom Profile methods
 extension Profile {
     
-    func copy<T: Sequence>(apps: T) where T.Element == App{
+    func copy<T: Sequence> (apps: T) where T.Element == App {
         for app in self.apps {
-            try! app.stateData.copy()
+            _ = try? app.stateData.copy()
         }
     }
     
-    func restoreSettings(){
+    func restoreSettings () {
         let scriptQueue = DispatchQueue(label: CustomQueue.appleScript.rawValue)
-        
+
         // Copy properties to be used in another thread
         let nightShift = self.nightShift
         let darkMode = self.darkMode
         let accentColour = self.accentColour
         
-        if ( nightShift     != .keep ||
-            darkMode       != .keep ||
-            accentColour   != .keep ) {
+        if nightShift       != .keep ||
+            darkMode        != .keep ||
+            accentColour    != .keep {
             scriptQueue.async {
-                Utils.runAppleScript(withName: .OpenPreferences)
-                Utils.runAppleScript(withName: .NightShift, parameters: nightShift.description)
-                Utils.runAppleScript(withName: .DarkMode, parameters: darkMode.description)
-                Utils.runAppleScript(withName: .AccentColour, parameters: accentColour.description)
-                Utils.runAppleScript(withName: .QuitPreferences)
+                Utils.runAppleScript(withName: .openPreferences)
+                Utils.runAppleScript(withName: .nightShift, parameters: nightShift.description)
+                Utils.runAppleScript(withName: .darkMode, parameters: darkMode.description)
+                Utils.runAppleScript(withName: .accentColour, parameters: accentColour.description)
+                Utils.runAppleScript(withName: .quitPreferences)
             }
         }
         
         if self.closeOtherApps {
-            Utils.runAppleScript(withName: .KillRunningApplications)
+            Utils.runAppleScript(withName: .killRunningApplications)
         }
     }
     

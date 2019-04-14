@@ -17,22 +17,26 @@
 		5B10BE2821D84E4500B68865 /* DockAutoHide.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 5B10BE2721D84E4500B68865 /* DockAutoHide.scpt */; };
 		5B10BE2A21D9485400B68865 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10BE2921D9485400B68865 /* Extensions.swift */; };
 		5B10BE2C21D9489000B68865 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10BE2B21D9489000B68865 /* Realm.swift */; };
-		5B26F17821D0175600073BE3 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B26F17A21D0175600073BE3 /* PreferencesWindow.xib */; };
 		5B26F18121D0229C00073BE3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B26F18321D0229C00073BE3 /* MainMenu.xib */; };
 		5B38BA6821F5CAC9002F8258 /* CustomApplicationStateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38BA6721F5CAC9002F8258 /* CustomApplicationStateData.swift */; };
 		5B38BA6A21F5D404002F8258 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38BA6921F5D404002F8258 /* Errors.swift */; };
 		5B38BA6C21F5E793002F8258 /* DefaultStateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38BA6B21F5E793002F8258 /* DefaultStateData.swift */; };
 		5B38BA7221F61A00002F8258 /* BaseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38BA7121F61A00002F8258 /* BaseEntity.swift */; };
 		5B3A971521CA5EAD00239138 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A971421CA5EAD00239138 /* Utils.swift */; };
-		5B3A971C21CACBDB00239138 /* PreferencesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A971A21CACBDB00239138 /* PreferencesWindow.swift */; };
 		5B3A972121CADAA100239138 /* StatusMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A972021CADAA100239138 /* StatusMenu.swift */; };
 		5B3A972B21CAE72200239138 /* Runable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A972A21CAE72200239138 /* Runable.swift */; };
 		5B4D8ACC225641C90097F97D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B4D8ACA225641C80097F97D /* RealmSwift.framework */; };
 		5B4D8ACD225641C90097F97D /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B4D8ACA225641C80097F97D /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B4D8ACE225641C90097F97D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B4D8ACB225641C80097F97D /* Realm.framework */; };
 		5B4D8ACF225641C90097F97D /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B4D8ACB225641C80097F97D /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5B53B04C2261391600ECB0A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B53B04B2261391600ECB0A8 /* Main.storyboard */; };
+		5B53B04E22613F5700ECB0A8 /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B53B04D22613F5700ECB0A8 /* SidebarViewController.swift */; };
+		5B53B0502261DDED00ECB0A8 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B53B04F2261DDED00ECB0A8 /* ItemListViewController.swift */; };
 		5B72C8E5224CE04100AAE16A /* StateDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72C8E4224CE04100AAE16A /* StateDataUtils.swift */; };
 		5B72C8E8224CEAE000AAE16A /* NSBundle+OBCodeSigningInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B72C8E7224CEAE000AAE16A /* NSBundle+OBCodeSigningInfo.m */; };
+		5B7415B62261F87100BBFD79 /* ProfileSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7415B52261F87100BBFD79 /* ProfileSplitViewController.swift */; };
+		5B7415B82262007C00BBFD79 /* RunableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7415B72262007C00BBFD79 /* RunableController.swift */; };
+		5B7415BA22621B8A00BBFD79 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7415B922621B8A00BBFD79 /* PreferenceViewController.swift */; };
 		5B8E04B921F62F1D005F7CDC /* ChromeStateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8E04B821F62F1D005F7CDC /* ChromeStateData.swift */; };
 		5B8E04BD21F64ADE005F7CDC /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 5B8E04BC21F64ADE005F7CDC /* readme.md */; };
 		5B9D759722492214007D74A4 /* SanboxedSaveStateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D759622492214007D74A4 /* SanboxedSaveStateData.swift */; };
@@ -55,6 +59,7 @@
 		5BCEF0B921D951220082534B /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCEF0B621D951220082534B /* App.swift */; };
 		5BCEF0BB21D951220082534B /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCEF0B721D951220082534B /* Window.swift */; };
 		5BCEF0BD21D951220082534B /* Workflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCEF0B821D951220082534B /* Workflow.swift */; };
+		5BF091D322626B1200406268 /* PrefWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF091D222626B1200406268 /* PrefWindow.swift */; };
 		5BF37D4E21D250C7003E80A8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BF37D5021D250C7003E80A8 /* Localizable.strings */; };
 		5BFE32AA21F27449009B9956 /* KillAll.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 5BFE32A921F27449009B9956 /* KillAll.scpt */; };
 		89CFEF2F804CEB871B4AA7AC /* Pods_iOSApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D282353F31F02984296287CC /* Pods_iOSApp.framework */; };
@@ -115,9 +120,6 @@
 		5B10BE2721D84E4500B68865 /* DockAutoHide.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DockAutoHide.scpt; sourceTree = "<group>"; };
 		5B10BE2921D9485400B68865 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5B10BE2B21D9489000B68865 /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
-		5B1C8F2921F25CD100373D8C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PreferencesWindow.strings; sourceTree = "<group>"; };
-		5B1C8F2B21F25CD400373D8C /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/PreferencesWindow.strings; sourceTree = "<group>"; };
-		5B26F17E21D017B500073BE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PreferencesWindow.xib; sourceTree = "<group>"; };
 		5B26F18221D0229C00073BE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5B26F18521D022B400073BE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		5B38BA6721F5CAC9002F8258 /* CustomApplicationStateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomApplicationStateData.swift; sourceTree = "<group>"; };
@@ -125,7 +127,6 @@
 		5B38BA6B21F5E793002F8258 /* DefaultStateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStateData.swift; sourceTree = "<group>"; };
 		5B38BA7121F61A00002F8258 /* BaseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEntity.swift; sourceTree = "<group>"; };
 		5B3A971421CA5EAD00239138 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		5B3A971A21CACBDB00239138 /* PreferencesWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindow.swift; sourceTree = "<group>"; };
 		5B3A972021CADAA100239138 /* StatusMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenu.swift; sourceTree = "<group>"; };
 		5B3A972A21CAE72200239138 /* Runable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Runable.swift; sourceTree = "<group>"; };
 		5B3A973621CBDD9300239138 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -133,9 +134,15 @@
 		5B3B242D21F664BC0085F247 /* iTerm.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = iTerm.gif; sourceTree = "<group>"; };
 		5B4D8ACA225641C80097F97D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		5B4D8ACB225641C80097F97D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		5B53B04B2261391600ECB0A8 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5B53B04D22613F5700ECB0A8 /* SidebarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewController.swift; sourceTree = "<group>"; };
+		5B53B04F2261DDED00ECB0A8 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 		5B72C8E4224CE04100AAE16A /* StateDataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDataUtils.swift; sourceTree = "<group>"; };
 		5B72C8E6224CEAE000AAE16A /* NSBundle+OBCodeSigningInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+OBCodeSigningInfo.h"; sourceTree = "<group>"; };
 		5B72C8E7224CEAE000AAE16A /* NSBundle+OBCodeSigningInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+OBCodeSigningInfo.m"; sourceTree = "<group>"; };
+		5B7415B52261F87100BBFD79 /* ProfileSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSplitViewController.swift; sourceTree = "<group>"; };
+		5B7415B72262007C00BBFD79 /* RunableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunableController.swift; sourceTree = "<group>"; };
+		5B7415B922621B8A00BBFD79 /* PreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		5B8E04B821F62F1D005F7CDC /* ChromeStateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromeStateData.swift; sourceTree = "<group>"; };
 		5B8E04BC21F64ADE005F7CDC /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		5B9D759622492214007D74A4 /* SanboxedSaveStateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanboxedSaveStateData.swift; sourceTree = "<group>"; };
@@ -167,6 +174,9 @@
 		5BCEF0B621D951220082534B /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		5BCEF0B721D951220082534B /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		5BCEF0B821D951220082534B /* Workflow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workflow.swift; sourceTree = "<group>"; };
+		5BE862AE2263D93700FE0D63 /* new-ui-sketch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new-ui-sketch.png"; sourceTree = "<group>"; };
+		5BE862AF2263D93700FE0D63 /* new-ui-preferences.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new-ui-preferences.png"; sourceTree = "<group>"; };
+		5BF091D222626B1200406268 /* PrefWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefWindow.swift; sourceTree = "<group>"; };
 		5BF37D4A21D15433003E80A8 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		5BF37D5121D250CB003E80A8 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5BF37D5221D2543B003E80A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -271,15 +281,6 @@
 			name = MainMenu;
 			sourceTree = "<group>";
 		};
-		5B3A973021CBA9C600239138 /* Preferences */ = {
-			isa = PBXGroup;
-			children = (
-				5B26F17A21D0175600073BE3 /* PreferencesWindow.xib */,
-				5B3A971A21CACBDB00239138 /* PreferencesWindow.swift */,
-			);
-			name = Preferences;
-			sourceTree = "<group>";
-		};
 		5B3A974A21CBDEFB00239138 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,11 +301,27 @@
 		5B3B242B21F6648B0085F247 /* doc_assets */ = {
 			isa = PBXGroup;
 			children = (
+				5BE862AF2263D93700FE0D63 /* new-ui-preferences.png */,
+				5BE862AE2263D93700FE0D63 /* new-ui-sketch.png */,
 				5BC01EF122106FB200EECCC1 /* icon.png */,
 				5B3B242D21F664BC0085F247 /* iTerm.gif */,
 				5B3B242C21F664B30085F247 /* Themes.gif */,
 			);
 			path = doc_assets;
+			sourceTree = "<group>";
+		};
+		5B53B04A226137E200ECB0A8 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				5B53B04B2261391600ECB0A8 /* Main.storyboard */,
+				5B53B04D22613F5700ECB0A8 /* SidebarViewController.swift */,
+				5B7415B52261F87100BBFD79 /* ProfileSplitViewController.swift */,
+				5B53B04F2261DDED00ECB0A8 /* ItemListViewController.swift */,
+				5B7415B72262007C00BBFD79 /* RunableController.swift */,
+				5B7415B922621B8A00BBFD79 /* PreferenceViewController.swift */,
+				5BF091D222626B1200406268 /* PrefWindow.swift */,
+			);
+			name = Preferences;
 			sourceTree = "<group>";
 		};
 		5BB34C9E21E94F7900ABCC30 /* Objective-C */ = {
@@ -380,7 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				5B3A972D21CBA9AF00239138 /* MainMenu */,
-				5B3A973021CBA9C600239138 /* Preferences */,
+				5B53B04A226137E200ECB0A8 /* Preferences */,
 			);
 			path = "User Interface";
 			sourceTree = "<group>";
@@ -452,6 +469,7 @@
 				5B3A974921CBDD9300239138 /* Embed App Extensions */,
 				0CC1D058A070E6A260DBFF48 /* [CP] Embed Pods Frameworks */,
 				5B4D8AD0225641C90097F97D /* Embed Frameworks */,
+				5BE862AD2263C80800FE0D63 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -532,9 +550,9 @@
 				5BC2D1D821C1165F00C5A255 /* Assets.xcassets in Resources */,
 				5B10BE2621D7FF9200B68865 /* AccentColour.scpt in Resources */,
 				5BF37D4E21D250C7003E80A8 /* Localizable.strings in Resources */,
+				5B53B04C2261391600ECB0A8 /* Main.storyboard in Resources */,
 				5B10BE1E21D7F30600B68865 /* NightShift.scpt in Resources */,
 				5B10BE2821D84E4500B68865 /* DockAutoHide.scpt in Resources */,
-				5B26F17821D0175600073BE3 /* PreferencesWindow.xib in Resources */,
 				5B26F18121D0229C00073BE3 /* MainMenu.xib in Resources */,
 				5BFE32AA21F27449009B9956 /* KillAll.scpt in Resources */,
 				5B10BE2421D7FF9200B68865 /* DarkMode.scpt in Resources */,
@@ -594,6 +612,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5BE862AD2263C80800FE0D63 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		92E413022501B93B696472B5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -633,11 +668,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B3A971C21CACBDB00239138 /* PreferencesWindow.swift in Sources */,
 				5B38BA6821F5CAC9002F8258 /* CustomApplicationStateData.swift in Sources */,
+				5BF091D322626B1200406268 /* PrefWindow.swift in Sources */,
 				5B3A972B21CAE72200239138 /* Runable.swift in Sources */,
+				5B7415BA22621B8A00BBFD79 /* PreferenceViewController.swift in Sources */,
 				5BCEF0B421D950870082534B /* RealmDetachableObject.swift in Sources */,
+				5B7415B62261F87100BBFD79 /* ProfileSplitViewController.swift in Sources */,
 				5B72C8E8224CEAE000AAE16A /* NSBundle+OBCodeSigningInfo.m in Sources */,
+				5B53B04E22613F5700ECB0A8 /* SidebarViewController.swift in Sources */,
 				5BCEF0BB21D951220082534B /* Window.swift in Sources */,
 				5BCEF0BD21D951220082534B /* Workflow.swift in Sources */,
 				5B38BA6A21F5D404002F8258 /* Errors.swift in Sources */,
@@ -653,26 +691,18 @@
 				5B10BE2A21D9485400B68865 /* Extensions.swift in Sources */,
 				5B38BA7221F61A00002F8258 /* BaseEntity.swift in Sources */,
 				5B38BA6C21F5E793002F8258 /* DefaultStateData.swift in Sources */,
+				5B53B0502261DDED00ECB0A8 /* ItemListViewController.swift in Sources */,
 				5B9D759722492214007D74A4 /* SanboxedSaveStateData.swift in Sources */,
 				5BCEF0B921D951220082534B /* App.swift in Sources */,
 				5B72C8E5224CE04100AAE16A /* StateDataUtils.swift in Sources */,
 				5BB34D7121EB531C00ABCC30 /* Bridging-Header.h in Sources */,
+				5B7415B82262007C00BBFD79 /* RunableController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5B26F17A21D0175600073BE3 /* PreferencesWindow.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5B26F17E21D017B500073BE3 /* Base */,
-				5B1C8F2921F25CD100373D8C /* en */,
-				5B1C8F2B21F25CD400373D8C /* cs */,
-			);
-			name = PreferencesWindow.xib;
-			sourceTree = "<group>";
-		};
 		5B26F18321D0229C00073BE3 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

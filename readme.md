@@ -14,6 +14,9 @@ When profile is invoked:
 
 ➡️  [Download prebuild version](https://github.com/mamiksik/CabinetProX/releases) ⬅️
 
+![](doc_assets/new-ui-sketch.png)
+
+## SOČ
 This app has been initially developed for science fare. (The paper regarding the development is available only in Czech).
 
 ➡️  [Read it here](doc_assets/soc.pdf) ⬅️

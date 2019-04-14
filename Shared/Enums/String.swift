@@ -1,21 +1,21 @@
-// MARK - Scripts
+// MARK: Scripts
 enum Scripts : String {
-    case DarkMode = "DarkMode"
-    case AccentColour = "AccentColour"
-    case NightShift = "NightShift"
-    case AutoHideDock = "AutoHideDock"
-    case OpenPreferences = "OpenPreferences"
-    case QuitPreferences = "QuitPreferences"
-    case KillRunningApplications = "KillAll"
+    case darkMode = "DarkMode"
+    case accentColour = "AccentColour"
+    case nightShift = "NightShift"
+    case autoHideDock = "AutoHideDock"
+    case openPreferences = "OpenPreferences"
+    case quitPreferences = "QuitPreferences"
+    case killRunningApplications = "KillAll"
 }
 
-//MARK - Apps requiring special treatment
+// MARK: Apps requiring special treatment
 enum AppSpecificBehaviour: String {
-    case Chrome = "com.google.Chrome"
-    case Finder = "com.apple.finder"
+    case chrome = "com.google.Chrome"
+    case finder = "com.apple.finder"
 }
 
-//MARK - Queue
+// MARK: Queue
 enum CustomQueue: String {
     case files = "mamiksik.states"
     case appleScript = "mamiksik.appleScript"
