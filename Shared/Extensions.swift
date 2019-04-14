@@ -58,8 +58,9 @@ extension List: DetachableObject {
         
         forEach {
             if let detachable = $0 as? DetachableObject {
-                let detached = detachable.detached() as! Element
-                result.append(detached)
+                if let detached = detachable.detached() as? Element {
+                    result.append(detached)
+                }
             } else {
                 result.append($0) //Primtives are pass by value; don't need to recreate
             }

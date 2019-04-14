@@ -6,4 +6,5 @@ enum ProfileError: Error {
 
 enum AppError: Error {
     case cantGetAppName
+    case cantGetAppBundle
 }

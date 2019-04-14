@@ -13,7 +13,7 @@ class InstanceService : NSObject {
     
     // Service type must be a unique string, at most 15 characters long
     // and can contain only ASCII lowercase letters, numbers and hyphens.
-    private let ServiceType = "ma-desktop"
+    private let serviceType = "ma-desktop"
     
     #if os(OSX)
         private let myPeerId = MCPeerID(displayName: Host.current().name!)
@@ -37,8 +37,8 @@ class InstanceService : NSObject {
     }
     
     override init() {
-        self.serviceAdvertiser = MCNearbyServiceAdvertiser(peer: myPeerId, discoveryInfo: nil, serviceType: ServiceType)
-        self.serviceBrowser = MCNearbyServiceBrowser(peer: myPeerId, serviceType: ServiceType)
+        self.serviceAdvertiser = MCNearbyServiceAdvertiser(peer: myPeerId, discoveryInfo: nil, serviceType: serviceType)
+        self.serviceBrowser = MCNearbyServiceBrowser(peer: myPeerId, serviceType: serviceType)
         
         super.init()
         

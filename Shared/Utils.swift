@@ -15,14 +15,22 @@ import RealmSwift
 
 final class Utils {
     
-    static let bundleUrl: URL = Bundle.main.resourceURL! //Add check for optional
-    static let saveDataUrl: URL = Utils.bundleUrl.appendingPathComponent("Saved Application State/")
+    static var bundleUrl: URL {
+        get {
+            return Bundle.main.resourceURL!
+        }
+    }
+    
+    static var saveDataUrl: URL {
+        get {
+            return Utils.bundleUrl.appendingPathComponent("Saved Application State/")
+        }
+    }
     
     static var realmConfiguration: RealmSwift.Realm.Configuration {
         get {
             let config = Realm.Configuration()
-            print(config.fileURL)
-//            config.fileURL = bundleUrl.appendingPathComponent("default.realm")
+            print(config.fileURL as Any)
             return config
         }
     }
@@ -51,6 +59,10 @@ final class Utils {
         alert.addButton(withTitle: "dialog.cancel".localized)
         
         alert.beginSheetModal(for: window, completionHandler: handler)
+    }
+    
+    static func popUpToOption(_ popUp: NSPopUpButton) -> Options? {
+        return Options(rawValue: popUp.indexOfSelectedItem)
     }
         
 }

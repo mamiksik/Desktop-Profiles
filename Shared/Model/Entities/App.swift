@@ -4,7 +4,7 @@ import Cocoa
 import RealmSwift
 
 // MARK - Realm entity declaration
-final class App: BaseEntity, Runable {
+final class App: BaseEntity, Runable, ActionItem {
     @objc dynamic var name = ""
     @objc dynamic var bundleIdentifier = ""
     @objc dynamic var path = ""
@@ -17,6 +17,22 @@ final class App: BaseEntity, Runable {
     var profile: Profile {
         return profiles.first!
     }
+    
+    convenience init(forPath: String) throws {
+        guard let bundle = Bundle(path: forPath) else {
+            throw AppError.cantGetAppBundle
+        }
+        
+        guard let name = bundle.infoDictionary![kCFBundleNameKey as String] as? String else {
+            throw AppError.cantGetAppName
+        }
+        
+        self.init()
+        self.name = name
+        self.bundleIdentifier = bundle.bundleIdentifier!
+        self.path = forPath
+    }
+    
 }
 
 
@@ -36,7 +52,7 @@ extension App {
 
     var stateData: CustomApplicationStateData {
         switch bundleIdentifier {
-        case AppSpecificBehaviour.Chrome.rawValue:
+        case AppSpecificBehaviour.chrome.rawValue:
             return ChromeStateData(self)
         default:
             if isSanboxed {
@@ -49,7 +65,7 @@ extension App {
     
     func close() throws {
         if var pid = try? shellOut(to: "pgrep \(self.name)") {
-            if self.bundleIdentifier != AppSpecificBehaviour.Chrome.rawValue {
+            if self.bundleIdentifier != AppSpecificBehaviour.chrome.rawValue {
                 pid = pid.replacingOccurrences(of: "\n", with: " ")
             }
             try shellOut(to: "kill \(pid)")
@@ -57,7 +73,7 @@ extension App {
     }
     
     func open() throws {
-        if AppSpecificBehaviour.Finder.rawValue != bundleIdentifier {
+        if AppSpecificBehaviour.finder.rawValue != bundleIdentifier {
             try shellOut(to: "open -b \(self.bundleIdentifier)")
         }
     }

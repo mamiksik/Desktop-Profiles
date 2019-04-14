@@ -11,16 +11,13 @@ import UIKit
 class ViewController: UIViewController {
 
     let instanceService = InstanceService()
-    
-    
+
     @IBOutlet weak var connectedDevices: UILabel!
     @IBOutlet weak var profileName: UITextField!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         instanceService.delegate = self
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     @IBAction func sendTapped(_ sender: Any) {
@@ -29,13 +26,13 @@ class ViewController: UIViewController {
 }
 
 extension ViewController : InstanceServiceDelegate {
-    
+
     func connectedDevicesChanged(manager: InstanceService, connectedDevices: [String]) {
         DispatchQueue.main.async {
             self.connectedDevices.text = "Connections: \(connectedDevices.count)"
         }
     }
-    
+
     func profileChanged(manager: InstanceService, profileName: String) {
     }
 }
