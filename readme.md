@@ -3,7 +3,7 @@
 <img src="https://raw.githubusercontent.com/mamiksik/CabinetProX/master/doc_assets/icon.png" width="154">
 </p>
 
-# Desktop Profiles &middot; [![Build Status](https://travis-ci.org/mamiksik/Desktop-Profiles.svg?branch=master)](https://travis-ci.org/mamiksik/Desktop-Profiles)
+# Desktop Profiles &middot; [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Build Status](https://travis-ci.org/mamiksik/Desktop-Profiles.svg?branch=master)](https://travis-ci.org/mamiksik/Desktop-Profiles)
 The main purpose of this utility is to facilitate the transition among different workspaces (work environments). User-defined profiles are equipped with a container for caching apps internal states and its windows arrangement The profile also allows the user to predefine system settings e. g. theme, accent colour. Online demo is located [here](#demo).
 
 When profile is invoked:
