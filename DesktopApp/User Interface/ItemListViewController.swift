@@ -38,7 +38,7 @@ class ItemListViewController: NSViewController {
     
     @IBOutlet weak var sidebar: NSOutlineView!
 
-    var realm: Realm?
+//    var realm: Realm?
     var profile: Profile?
     var items: [ActionItem] = []
     let dialog = NSOpenPanel()
@@ -47,8 +47,6 @@ class ItemListViewController: NSViewController {
         super.viewDidLoad()
         sidebar.dataSource = self
         sidebar.delegate = self
-
-        realm = try? Realm()
         
         dialog.showsResizeIndicator     = true
         dialog.showsHiddenFiles         = false
@@ -65,7 +63,6 @@ class ItemListViewController: NSViewController {
     }
     
     deinit {
-        
         print("ItemListViewController deinitialized")
     }
     
@@ -85,32 +82,34 @@ class ItemListViewController: NSViewController {
         dialog.beginSheetModal(
             for: self.view.window!,
             completionHandler: { [unowned self] result in
-                
-//            guard
-//                result == NSApplication.ModalResponse.OK,
-//                let path = self.dialog.url?.path,
-//                let profile = self.profile
-//            else {
-//                return
-//            }
-//
-//            do {
-//                if self.dialog.url!.pathExtension == "app" {
-//                    let app = try App(forPath: path)
-//                    try self.realm?.write {
-//                        profile.apps.append(app)
-//                    }
-//                } else if self.dialog.url!.pathExtension == "workflow" {
-//                    let workflow = try Workflow(forPath: path, forProfile: profile)
-//                    try self.realm?.write {
-//                        profile.workflows.append(workflow)
-//                    }
-//                }
-//            } catch {
-//                NSLog(error.localizedDescription)
-//            }
+                autoreleasepool {
+            guard
+                result == NSApplication.ModalResponse.OK,
+                let path = self.dialog.url?.path,
+                let profile = self.profile,
+                let realm = try? Realm()
+            else {
+                return
+            }
+
+            do {
+                if self.dialog.url!.pathExtension == "app" {
+                    let app = try App(forPath: path)
+                    try realm.write {
+                        profile.apps.append(app)
+                    }
+                } else if self.dialog.url!.pathExtension == "workflow" {
+                    let workflow = try Workflow(forPath: path, forProfile: profile)
+                    try realm.write {
+                        profile.workflows.append(workflow)
+                    }
+                }
+            } catch {
+                NSLog(error.localizedDescription)
+            }
             
             self.reloadData()
+                }
         })
     }
     
@@ -119,21 +118,24 @@ class ItemListViewController: NSViewController {
 
         // 0 is preferences
         if index != 0 {
-            guard let detachedObj = items[index] as? BaseEntity else {
+            guard
+                let detachedObj = items[index] as? BaseEntity,
+                let realm = try? Realm()
+            else {
                 return
             }
             do {
-                if let app = realm?.object(ofType: App.self, forPrimaryKey: detachedObj.id) {
+                if let app = realm.object(ofType: App.self, forPrimaryKey: detachedObj.id) {
                     try app.stateData.clean()
-                    try realm?.write {
-                        realm?.delete(app)
+                    try realm.write {
+                        realm.delete(app)
                     }
-                } else if let workflow = realm?.object(ofType: Workflow.self, forPrimaryKey: detachedObj.id) {
+                } else if let workflow = realm.object(ofType: Workflow.self, forPrimaryKey: detachedObj.id) {
                     let path = workflow.path
                     let fm = FileManager.default
 
-                    try realm?.write {
-                        realm?.delete(workflow)
+                    try realm.write {
+                        realm.delete(workflow)
                     }
 
                     if fm.isDeletableFile(atPath: path) {
