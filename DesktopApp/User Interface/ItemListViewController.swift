@@ -36,6 +36,7 @@ extension Notification.Name {
 
 class ItemListViewController: NSViewController {
     
+    @IBOutlet var dragDropView: ADragDropView!
     @IBOutlet weak var sidebar: NSOutlineView!
 
 //    var realm: Realm?
@@ -47,6 +48,10 @@ class ItemListViewController: NSViewController {
         super.viewDidLoad()
         sidebar.dataSource = self
         sidebar.delegate = self
+        
+        dragDropView.delegate = self
+        dragDropView.acceptedFileExtensions = ["app", "workflow"]
+//        dragDropView.highlight = true
         
         dialog.showsResizeIndicator     = true
         dialog.showsHiddenFiles         = false
@@ -72,20 +77,26 @@ class ItemListViewController: NSViewController {
     
     @IBAction func performAction (_ sender: NSSegmentedControl) {
          if sender.selectedSegment == 0 {
-            addRunable()
+            dialog.beginSheetModal(
+                for: self.view.window!,
+                completionHandler: { [unowned self] result in
+                    guard
+                        result == NSApplication.ModalResponse.OK,
+                        let path = self.dialog.url
+                    else {
+                        return
+                    }
+                    
+                    self.addRunable(path)
+                })
          } else {
             removeRunable()
         }
     }
 
-    func addRunable () {
-        dialog.beginSheetModal(
-            for: self.view.window!,
-            completionHandler: { [unowned self] result in
-                autoreleasepool {
+    func addRunable (_ url: URL) {
+        autoreleasepool {
             guard
-                result == NSApplication.ModalResponse.OK,
-                let path = self.dialog.url?.path,
                 let profile = self.profile,
                 let realm = try? Realm()
             else {
@@ -93,13 +104,13 @@ class ItemListViewController: NSViewController {
             }
 
             do {
-                if self.dialog.url!.pathExtension == "app" {
-                    let app = try App(forPath: path)
+                if url.pathExtension == "app" {
+                    let app = try App(forPath: url.path)
                     try realm.write {
                         profile.apps.append(app)
                     }
-                } else if self.dialog.url!.pathExtension == "workflow" {
-                    let workflow = try Workflow(forPath: path, forProfile: profile)
+                } else if url.pathExtension == "workflow" {
+                    let workflow = try Workflow(forPath: url.path, forProfile: profile)
                     try realm.write {
                         profile.workflows.append(workflow)
                     }
@@ -109,15 +120,14 @@ class ItemListViewController: NSViewController {
             }
             
             self.reloadData()
-                }
-        })
+        }
     }
     
     func removeRunable () {
         let index: Int = sidebar.selectedRow
 
         // 0 is preferences
-        if index != 0 {
+        if index > 0 {
             guard
                 let detachedObj = items[index] as? BaseEntity,
                 let realm = try? Realm()
@@ -145,9 +155,10 @@ class ItemListViewController: NSViewController {
             } catch {
                 NSLog(error.localizedDescription)
             }
+            
+            reloadData()
+            sidebar.selectRowIndexes([index - 1], byExtendingSelection: false)
         }
-        reloadData()
-        sidebar.selectRowIndexes([index - 1], byExtendingSelection: false)
     }
 
     func reloadData() {
@@ -222,5 +233,17 @@ extension ItemListViewController: NSOutlineViewDelegate {
         }
 
         return nil
+    }
+}
+
+extension ItemListViewController: ADragDropViewDelegate {
+    func dragDropView(_ dragDropView: ADragDropView, droppedFileWithURL URL: URL) {
+        addRunable(URL)
+    }
+    
+    func dragDropView(_ dragDropView: ADragDropView, droppedFilesWithURLs URLs: [URL]) {
+        for url in URLs {
+            addRunable(url)
+        }
     }
 }

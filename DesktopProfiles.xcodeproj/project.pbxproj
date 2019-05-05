@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5953B45404EDCE3E0F5B3C22 /* Pods_DesktopProfiles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E94308ECE87E348B4217730 /* Pods_DesktopProfiles.framework */; };
+		5B0BBBA1227F233D00D4AB46 /* ADragDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BBB9F227F233D00D4AB46 /* ADragDropView.swift */; };
+		5B0BBBA2227F233D00D4AB46 /* NSDraggingInfo+FilePathURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BBBA0227F233D00D4AB46 /* NSDraggingInfo+FilePathURL.swift */; };
 		5B10BE1B21D7E7F900B68865 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10BE1A21D7E7F900B68865 /* AppDelegate.swift */; };
 		5B10BE1E21D7F30600B68865 /* NightShift.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 5B10BE1D21D7F30600B68865 /* NightShift.scpt */; };
 		5B10BE2321D7FF9200B68865 /* QuitPreferences.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 5B10BE1F21D7FF9200B68865 /* QuitPreferences.scpt */; };
@@ -111,6 +113,8 @@
 
 /* Begin PBXFileReference section */
 		09DC2DECBFA0E981B1F257E9 /* Pods-iOSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSApp.debug.xcconfig"; path = "Target Support Files/Pods-iOSApp/Pods-iOSApp.debug.xcconfig"; sourceTree = "<group>"; };
+		5B0BBB9F227F233D00D4AB46 /* ADragDropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADragDropView.swift; sourceTree = "<group>"; };
+		5B0BBBA0227F233D00D4AB46 /* NSDraggingInfo+FilePathURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDraggingInfo+FilePathURL.swift"; sourceTree = "<group>"; };
 		5B10BE1A21D7E7F900B68865 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B10BE1D21D7F30600B68865 /* NightShift.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = NightShift.scpt; sourceTree = "<group>"; };
 		5B10BE1F21D7FF9200B68865 /* QuitPreferences.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = QuitPreferences.scpt; sourceTree = "<group>"; };
@@ -225,6 +229,15 @@
 				D282353F31F02984296287CC /* Pods_iOSApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B0BBB9E227F232F00D4AB46 /* DragDrop */ = {
+			isa = PBXGroup;
+			children = (
+				5B0BBB9F227F233D00D4AB46 /* ADragDropView.swift */,
+				5B0BBBA0227F233D00D4AB46 /* NSDraggingInfo+FilePathURL.swift */,
+			);
+			path = DragDrop;
 			sourceTree = "<group>";
 		};
 		5B10BE1C21D7F2E800B68865 /* Scripts */ = {
@@ -377,6 +390,7 @@
 		5BC2D1D221C1165C00C5A255 /* DesktopApp */ = {
 			isa = PBXGroup;
 			children = (
+				5B0BBB9E227F232F00D4AB46 /* DragDrop */,
 				5B10BE1A21D7E7F900B68865 /* AppDelegate.swift */,
 				5BC88E6121C55B29005B9EEA /* User Interface */,
 				5BC88E6421C55DE3005B9EEA /* Supporting Filess */,
@@ -672,6 +686,7 @@
 				5BF091D322626B1200406268 /* PrefWindow.swift in Sources */,
 				5B3A972B21CAE72200239138 /* Runable.swift in Sources */,
 				5B7415BA22621B8A00BBFD79 /* PreferenceViewController.swift in Sources */,
+				5B0BBBA2227F233D00D4AB46 /* NSDraggingInfo+FilePathURL.swift in Sources */,
 				5BCEF0B421D950870082534B /* RealmDetachableObject.swift in Sources */,
 				5B7415B62261F87100BBFD79 /* ProfileSplitViewController.swift in Sources */,
 				5B72C8E8224CEAE000AAE16A /* NSBundle+OBCodeSigningInfo.m in Sources */,
@@ -681,6 +696,7 @@
 				5B38BA6A21F5D404002F8258 /* Errors.swift in Sources */,
 				5BC2D1E421C11A9B00C5A255 /* String.swift in Sources */,
 				5B3A972121CADAA100239138 /* StatusMenu.swift in Sources */,
+				5B0BBBA1227F233D00D4AB46 /* ADragDropView.swift in Sources */,
 				5B3A971521CA5EAD00239138 /* Utils.swift in Sources */,
 				5BC88D9021C2D0C5005B9EEA /* Facade.swift in Sources */,
 				5BC01F412210BA3E00EECCC1 /* InstanceService.swift in Sources */,

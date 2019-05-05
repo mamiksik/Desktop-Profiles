@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="o1T-Xe-9EV">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -106,7 +107,7 @@
                                 </scroller>
                             </scrollView>
                             <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Fbs-lc-nfu">
-                                <rect key="frame" x="20" y="6" width="65" height="23"/>
+                                <rect key="frame" x="19.5" y="6" width="65" height="23"/>
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" style="capsule" trackingMode="momentary" id="weJ-GX-BdK">
                                     <font key="font" metaFont="system" size="24"/>
                                     <segments>
@@ -171,12 +172,12 @@
         <scene sceneID="8mB-sJ-GcU">
             <objects>
                 <viewController id="tRl-Rb-Tqf" customClass="ItemListViewController" customModule="DesktopProfiles" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m0B-2X-BBW">
+                    <view key="view" id="m0B-2X-BBW" customClass="ADragDropView" customModule="DesktopProfiles" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="239" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Voh-WO-PH7">
-                                <rect key="frame" x="20" y="7" width="65" height="23"/>
+                                <rect key="frame" x="19.5" y="7" width="65" height="23"/>
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" style="capsule" trackingMode="momentary" id="rD0-Zt-Qmr">
                                     <font key="font" metaFont="system"/>
                                     <segments>
@@ -189,7 +190,7 @@
                                 </connections>
                             </segmentedControl>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MM3-jS-z8Y">
-                                <rect key="frame" x="177" y="7" width="42" height="23"/>
+                                <rect key="frame" x="176.5" y="7" width="43" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="42" id="WDs-2B-q7Z"/>
                                 </constraints>
@@ -312,6 +313,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dragDropView" destination="m0B-2X-BBW" id="n0Z-0d-omi"/>
                         <outlet property="sidebar" destination="CrD-Yc-S5C" id="c6T-vF-Mzh"/>
                     </connections>
                 </viewController>
