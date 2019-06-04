@@ -17,9 +17,31 @@
 */
 
 import Foundation
+import RealmSwift
 
-final class Workflow: BaseEntity, Name {
+// MARK: - Realm entity declaration
+class Profile: BaseEntity {
     @objc dynamic var name = ""
-    @objc dynamic var path = ""
+    @objc dynamic var defaultProfile = false
+    @objc dynamic var darkMode: Options = .keep
+    @objc dynamic var nightShift: Options = .keep
+    @objc dynamic var accentColour: Color = .keep
+    @objc dynamic var closeOtherApps: Bool = false
 
+    @objc dynamic var shortcutKeyCode: Int = -1
+    @objc dynamic var shortcutModifierCode: Int = -1
+
+    let apps = List<App>()
+    let workflows = List<Workflow>()
+}
+
+// MARK: Comperable
+extension Profile {
+    static func == (lhs: Profile, rhs: Profile) -> Bool {
+        return lhs.name == rhs.name
+    }
+
+    static func != (lhs: Profile, rhs: Profile) -> Bool {
+        return lhs.name != rhs.name
+    }
 }

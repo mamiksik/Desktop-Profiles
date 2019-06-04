@@ -16,13 +16,9 @@
    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-// MARK: - Errors
+import Foundation
 
-enum ProfileError: Error {
-    case profileWithSameNameAlreadyExiest
-}
-
-enum AppError: Error {
-    case cantGetAppName
-    case cantGetAppBundle
+final class Workflow: BaseEntity, Name {
+    @objc dynamic var name = ""
+    @objc dynamic var path = ""
 }

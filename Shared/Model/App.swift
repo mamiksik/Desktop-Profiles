@@ -16,13 +16,29 @@
    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-// MARK: - Errors
+import Foundation
+import Cocoa
+import RealmSwift
 
-enum ProfileError: Error {
-    case profileWithSameNameAlreadyExiest
+// MARK: - Realm entity declaration
+final class App: BaseEntity, Name {
+    @objc dynamic var name = ""
+    @objc dynamic var bundleIdentifier = ""
+    @objc dynamic var path = ""
+
+    let windows = List<Window>()
+
+    //Not working with detached – Realm bug
+    let profiles = LinkingObjects(fromType: Profile.self, property: "apps")
+
+    var profile: Profile {
+        return profiles.first!
+    }
 }
 
-enum AppError: Error {
-    case cantGetAppName
-    case cantGetAppBundle
+// MARK: - Comperable
+extension App {
+    static func ==(lhs: App, rhs: App) -> Bool {
+        return lhs.name == rhs.name
+    }
 }

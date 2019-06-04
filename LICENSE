@@ -1,4 +1,4 @@
-                    GNU GENERAL PUBLIC LICENSE
+GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
@@ -196,9 +196,9 @@ technological measures.
 
   You may convey verbatim copies of the Program's source code as you
 receive it, in any medium, provided that you conspicuously and
-appropriately publish on each copy an appropriate copyright notice;
+appropriately publish on each copy an appropriate copyright notice
 keep intact all notices stating that this License and any
-non-permissive terms added in accord with section 7 apply to the code;
+non-permissive terms added in accord with section 7 apply to the code
 keep intact all notices of the absence of any warranty; and give all
 recipients a copy of this License along with the Program.
 
@@ -401,7 +401,7 @@ additional terms that apply to those files, or a notice indicating
 where to find the applicable terms.
 
   Additional terms, permissive or non-permissive, may be stated in the
-form of a separately written license, or stated as exceptions;
+form of a separately written license, or stated as exceptions
 the above requirements apply either way.
 
   8. Termination.

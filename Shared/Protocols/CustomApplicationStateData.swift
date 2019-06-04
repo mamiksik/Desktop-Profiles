@@ -16,11 +16,10 @@
    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-
 import Foundation
 
-protocol CustomApplicationStateData {    
-    func copy() throws -> Void
-    func restore() throws -> Void
-    func clean() throws -> Void
+protocol CustomApplicationStateData {
+    func copy () throws
+    func restore () throws
+    func clean () throws
 }

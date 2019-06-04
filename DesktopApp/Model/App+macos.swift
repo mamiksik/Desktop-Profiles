@@ -1,69 +1,45 @@
 /* Copyright (C) Martin Miksik 2019
 
-   This file is part of Desktop Profile
+ This file is part of Desktop Profile
 
-   This program is free software: you can redistribute it and/or modify
-   it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; either version 3 of the License, or
-   (at your option) any later version.
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 3 of the License, or
+ (at your option) any later version.
 
-   This program is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-   GNU General Public License for more details.
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
 
-   You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <https://www.gnu.org/licenses/>.
-*/
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
 
 import Foundation
 import ShellOut
-import Cocoa
-import RealmSwift
 
-// MARK - Realm entity declaration
-final class App: BaseEntity, Runable, ActionItem {
-    @objc dynamic var name = ""
-    @objc dynamic var bundleIdentifier = ""
-    @objc dynamic var path = ""
-    
-    let windows = List<Window>()
-    
-    //Not working with detached – Realm bug
-    let profiles = LinkingObjects(fromType: Profile.self, property: "apps")
-    
-    var profile: Profile {
-        return profiles.first!
-    }
-    
+// MARK: - Custom init
+extension App {
     convenience init(forPath: String) throws {
         guard let bundle = Bundle(path: forPath) else {
             throw AppError.cantGetAppBundle
         }
-        
+
         guard let name = bundle.infoDictionary![kCFBundleNameKey as String] as? String else {
             throw AppError.cantGetAppName
         }
-        
+
         self.init()
         self.name = name
         self.bundleIdentifier = bundle.bundleIdentifier!
         self.path = forPath
     }
-    
 }
 
-
-// MARK - Comperable
+// MARK: - Custom methods
 extension App {
-    static func ==(lhs: App, rhs: App) -> Bool {
-        return lhs.name == rhs.name
-    }
-}
 
-// MARK - Custom methods
-extension App {
-    
     var isSanboxed: Bool {
         return Bundle(path: path)?.ob_isSandboxed() ?? false
     }
@@ -80,7 +56,7 @@ extension App {
             }
         }
     }
-    
+
     func close() throws {
         if var pid = try? shellOut(to: "pgrep \(self.name)") {
             if self.bundleIdentifier != AppSpecificBehaviour.chrome.rawValue {
@@ -89,7 +65,7 @@ extension App {
             try shellOut(to: "kill \(pid)")
         }
     }
-    
+
     func open() throws {
         if AppSpecificBehaviour.finder.rawValue != bundleIdentifier {
             try shellOut(to: "open -b \(self.bundleIdentifier)")

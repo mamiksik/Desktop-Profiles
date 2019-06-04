@@ -23,26 +23,57 @@ class ViewController: UIViewController {
     let instanceService = InstanceService()
 
     @IBOutlet weak var connectedDevices: UILabel!
-    @IBOutlet weak var profileName: UITextField!
+    @IBOutlet weak var profilePicker: UIPickerView!
+
+    var pickerData: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         instanceService.delegate = self
+
+        self.profilePicker.delegate = self
+        self.profilePicker.dataSource = self
+
+//        self.serviceAdvertiser.startAdvertisingPeer()
     }
 
     @IBAction func sendTapped(_ sender: Any) {
-        instanceService.send(command: profileName.text!)
+        let name = pickerData[profilePicker.selectedRow(inComponent: 0)]
+        instanceService.send(command: .restoreProfile, data: name.data(using: .utf8)!)
     }
 }
 
-extension ViewController : InstanceServiceDelegate {
+extension ViewController: InstanceServiceDelegate {
 
     func connectedDevicesChanged(manager: InstanceService, connectedDevices: [String]) {
+        print("Connections: \(connectedDevices)")
         DispatchQueue.main.async {
             self.connectedDevices.text = "Connections: \(connectedDevices.count)"
         }
     }
 
-    func profileChanged(manager: InstanceService, profileName: String) {
+    func profileListReceived(manager: InstanceService, profiles: [String]) {
+        pickerData = profiles
+        DispatchQueue.main.async {
+            self.profilePicker.reloadAllComponents()
+        }
+    }
+}
+
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+
+    // Number of columns of data
+    func numberOfComponents (in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    // The number of rows of data
+    func pickerView (_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+
+    // The data to return fopr the row and component (column) that's being passed in
+    func pickerView (_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
     }
 }

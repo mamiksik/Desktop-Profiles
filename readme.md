@@ -1,4 +1,3 @@
-
 <p>
 <img src="https://raw.githubusercontent.com/mamiksik/CabinetProX/master/doc_assets/icon.png" width="154">
 </p>
@@ -21,12 +20,12 @@ This app has been initially developed for science fare. (The paper regarding the
 
 ➡️  [Read it here](doc_assets/soc.pdf) ⬅️
 
-## Remote control proof of concept 
-With further development the app could also be utilized in classrooms allowing teacher to switch student’s work environment remotely. The proof of concept is included in source code but if you wish to try it you would need to build the app yourself. 
+## Remote control proof of concept
+With further development the app could also be utilized in classrooms allowing teacher to switch student’s work environment remotely. The proof of concept is included in source code but if you wish to try it you would need to build the app yourself.
 
 ## Demo
 
-### Profile changing system settings 
+### Profile changing system settings
 
 |![](doc_assets/Themes.gif)|
 |:---:|

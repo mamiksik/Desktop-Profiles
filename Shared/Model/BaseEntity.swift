@@ -16,13 +16,12 @@
    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-
 import Foundation
 import RealmSwift
 
 class BaseEntity: Object {
     @objc var id = UUID().uuidString
-    
+
     override static func primaryKey() -> String? {
         return "id"
     }

@@ -20,7 +20,7 @@ import Cocoa
 import KeyHolder
 import RealmSwift
 
-class PreferenceViewController: NSViewController {
+class ProfilePreferencesController: NSViewController {
 
     @IBOutlet weak var name: NSTextField!
     @IBOutlet weak var darkMode: NSPopUpButton!
@@ -30,7 +30,7 @@ class PreferenceViewController: NSViewController {
     @IBOutlet weak var shortcut: RecordView!
 
     var profile: Profile?
-    
+
     deinit {
         print("PreferenceViewController deinitialized")
     }
@@ -41,7 +41,7 @@ class PreferenceViewController: NSViewController {
     }
 
     override func viewWillAppear() {
-        profile = (self.parent as? ProfileSplitViewController)?.profile
+        profile = (self.parent as? MainSplitViewController)?.profile
 
         if profile != nil {
             name.stringValue = profile!.name
@@ -56,8 +56,8 @@ class PreferenceViewController: NSViewController {
                 closeCheckbox.state = .off
             }
         }
-        
-        // RecordView bug - action can not be assign from IB
+
+//         RecordView bug - action can not be assign from IB
         shortcut.didChange = { keyCombo in
             self.valueChanged(self.shortcut as Any)
         }
@@ -67,7 +67,7 @@ class PreferenceViewController: NSViewController {
         guard let realm = try? Realm() else {
             return
         }
-        
+
         do {
             if let value = Utils.popUpToOption(darkMode!) {
                 try realm.write {
@@ -86,7 +86,7 @@ class PreferenceViewController: NSViewController {
                     profile!.accentColour = value
                 }
             }
-            
+
             try realm.write {
                 if closeCheckbox.state == .off {
                     profile!.closeOtherApps = false
@@ -98,14 +98,14 @@ class PreferenceViewController: NSViewController {
             try realm.write {
                 profile!.keyCombo = shortcut.keyCombo
             }
-            
+
         } catch {
             NSLog(error.localizedDescription)
         }
     }
 }
 
-extension PreferenceViewController: NSTextFieldDelegate {
+extension ProfilePreferencesController: NSTextFieldDelegate {
     func controlTextDidEndEditing(_ notification: Notification) {
         guard
             let textField = notification.object as? NSTextField,

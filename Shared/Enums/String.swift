@@ -17,7 +17,7 @@
 */
 
 // MARK: Scripts
-enum Scripts : String {
+enum Scripts: String {
     case darkMode = "DarkMode"
     case accentColour = "AccentColour"
     case nightShift = "NightShift"

@@ -26,57 +26,63 @@ class StatusMenu: NSObject, NSWindowDelegate {
 
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
-    var preferencesWindow : NSWindowController?
+    var preferencesWindow: NSWindowController?
     var notificationToken: NotificationToken?
     var statusMenuOriginalMenu: [NSMenuItem]?
-    
+    var instanceService: InstanceService?
+    var profilesName: [String] = []
+
     override func awakeFromNib() {
-        let icon = NSImage(named:NSImage.Name("StatusBarButtonImage"))
+        let icon = NSImage(named: NSImage.Name("StatusBarButtonImage"))
         statusItem.button!.image = icon
         statusItem.menu = statusMenu
         statusMenuOriginalMenu = statusMenu.items
         constructMenu()
-        
+
         guard
             let realm = try? Realm()
         else {
             return
         }
-        
+
         notificationToken = realm.observe { [unowned self] _, _ in
             self.constructMenu()
         }
 
-        #if DEBUG
-//        instanceService = InstanceService()
-//        instanceService?.delegate = self
-        #endif
+        if UserDefaults.standard.bool(forKey: .remoteControl) {
+            NSLog("Remote control enabled")
+            instanceService = InstanceService()
+            instanceService?.delegate = self
+        }
     }
-    
+
     deinit {
         notificationToken?.invalidate()
     }
-    
+
     func constructMenu() {
         guard let realm = try? Realm() else {
             return
         }
-        
+
         HotKeyCenter.shared.unregisterAll()
-        
+
         statusMenu.removeAllItems()
         statusMenu.items  = statusMenuOriginalMenu!
         statusMenu.addItem(NSMenuItem.separator())
 
+        profilesName = []
+
         for row in realm.objects(Profile.self).reversed() {
             let profile = row.detached()
-            
+            profilesName.append(profile.name)
+
             let profItem = NSMenuItem(
                 title: profile.name,
                 action: #selector(self.restoreFromProfile(_:)),
                 keyEquivalent: ""
             )
-            
+
             profItem.target = self
 
             if profile.keyCombo != nil {
@@ -99,12 +105,12 @@ class StatusMenu: NSObject, NSWindowDelegate {
     @IBAction func openPreferences(_ sender: Any) {
         if preferencesWindow == nil {
             let storyboard = NSStoryboard(name: "Main", bundle: nil)
-            
+
             preferencesWindow = storyboard.instantiateController(
                     withIdentifier: "viewController"
                 ) as? NSWindowController
         }
-        
+
         preferencesWindow!.showWindow(nil)
 
         preferencesWindow!.window?.center()
@@ -112,7 +118,7 @@ class StatusMenu: NSObject, NSWindowDelegate {
         preferencesWindow!.window?.delegate = self
         NSApp.activate(ignoringOtherApps: true)
     }
-    
+
     // MARK: Saves memory
     func windowWillClose(_ notification: Notification) {
         preferencesWindow = nil
@@ -143,19 +149,22 @@ class StatusMenu: NSObject, NSWindowDelegate {
         profile.restoreAll()
     }
 }
-//
-//extension StatusMenu : InstanceServiceDelegate {
-//
-//    func connectedDevicesChanged(manager: InstanceService, connectedDevices: [String]) {
-//        OperationQueue.main.addOperation {
-//            print("Connections: \(connectedDevices)")
-//        }
-//    }
-//
-//    func profileChanged(manager: InstanceService, profileName: String) {
-//        OperationQueue.main.addOperation {
-//            self.restore(profileName)
-//            NSLog("%@", "Value received: \(profileName)")
-//        }
-//    }
-//}
+
+extension StatusMenu: InstanceServiceDelegate {
+
+    func connectedDevicesChanged(manager: InstanceService, connectedDevices: [String]) {
+        OperationQueue.main.addOperation {
+            print("Connections: \(connectedDevices)")
+
+            let data = NSKeyedArchiver.archivedData(withRootObject: self.profilesName)
+            self.instanceService?.send(command: .sendProfiles, data: data)
+        }
+    }
+
+    func restoreProfile (manager: InstanceService, profileName: String) {
+        OperationQueue.main.addOperation {
+            NSLog("%@", "Value received: \(profileName)")
+            self.restore(profileName)
+        }
+    }
+}

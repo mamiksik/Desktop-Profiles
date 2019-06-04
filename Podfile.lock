@@ -1,28 +1,32 @@
 PODS:
   - KeyHolder (3.0.1):
     - Magnet (~> 2.3)
+  - LaunchAtLogin (2.2.0)
   - Magnet (2.3.0)
   - ShellOut (2.0.0)
   - SwiftLint (0.27.0)
 
 DEPENDENCIES:
   - KeyHolder
+  - LaunchAtLogin
   - ShellOut
   - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - KeyHolder
+    - LaunchAtLogin
     - Magnet
     - ShellOut
     - SwiftLint
 
 SPEC CHECKSUMS:
   KeyHolder: 142932db4eac7420b003e2eae94c9a61b8b53cb1
+  LaunchAtLogin: 7901f9a3bbfe9e1ea665407d04f4c39ac46fc833
   Magnet: 85344b019d023e26062199aeb5b4ad1f8d41c5df
   ShellOut: 1393eefc56892e80d85339e233d3935e2e1ff6f9
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
 
-PODFILE CHECKSUM: 73273605e5bf12296f325e0fa4b1551ecc55d61a
+PODFILE CHECKSUM: 39168964c95fb589051e1ef3476ffea228992dca
 
 COCOAPODS: 1.6.1

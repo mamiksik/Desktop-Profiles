@@ -17,12 +17,17 @@
 */
 
 import Cocoa
+import LaunchAtLogin
+import CoreWLAN
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        LaunchAtLogin.isEnabled = UserDefaults.standard.bool(forKey: "launchOnStartup")
+
+//        CWWiFiClient.shared().startMonitoringEvent(with: .ssidDidChange)
     }
-    
+
     func applicationWillTerminate(_ aNotification: Notification) {
     }
 }

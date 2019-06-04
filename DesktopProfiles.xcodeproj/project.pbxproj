@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5953B45404EDCE3E0F5B3C22 /* Pods_DesktopProfiles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E94308ECE87E348B4217730 /* Pods_DesktopProfiles.framework */; };
+		5B033D6D22A523B200504064 /* PreferencesViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B033D6C22A523B200504064 /* PreferencesViewController .swift */; };
 		5B0BBBA1227F233D00D4AB46 /* ADragDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BBB9F227F233D00D4AB46 /* ADragDropView.swift */; };
 		5B0BBBA2227F233D00D4AB46 /* NSDraggingInfo+FilePathURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BBBA0227F233D00D4AB46 /* NSDraggingInfo+FilePathURL.swift */; };
 		5B10BE1B21D7E7F900B68865 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10BE1A21D7E7F900B68865 /* AppDelegate.swift */; };
@@ -19,6 +20,9 @@
 		5B10BE2821D84E4500B68865 /* DockAutoHide.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 5B10BE2721D84E4500B68865 /* DockAutoHide.scpt */; };
 		5B10BE2A21D9485400B68865 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10BE2921D9485400B68865 /* Extensions.swift */; };
 		5B10BE2C21D9489000B68865 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10BE2B21D9489000B68865 /* Realm.swift */; };
+		5B1196F422999063009D94BE /* App+macos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1196F322999063009D94BE /* App+macos.swift */; };
+		5B1196F6229990BD009D94BE /* Profile+macos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1196F5229990BD009D94BE /* Profile+macos.swift */; };
+		5B1196F82299911D009D94BE /* Workflow+macos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1196F72299911D009D94BE /* Workflow+macos.swift */; };
 		5B26F18121D0229C00073BE3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B26F18321D0229C00073BE3 /* MainMenu.xib */; };
 		5B38BA6821F5CAC9002F8258 /* CustomApplicationStateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38BA6721F5CAC9002F8258 /* CustomApplicationStateData.swift */; };
 		5B38BA6A21F5D404002F8258 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38BA6921F5D404002F8258 /* Errors.swift */; };
@@ -26,22 +30,23 @@
 		5B38BA7221F61A00002F8258 /* BaseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38BA7121F61A00002F8258 /* BaseEntity.swift */; };
 		5B3A971521CA5EAD00239138 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A971421CA5EAD00239138 /* Utils.swift */; };
 		5B3A972121CADAA100239138 /* StatusMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A972021CADAA100239138 /* StatusMenu.swift */; };
-		5B3A972B21CAE72200239138 /* Runable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A972A21CAE72200239138 /* Runable.swift */; };
+		5B3A972B21CAE72200239138 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A972A21CAE72200239138 /* Name.swift */; };
 		5B4D8ACC225641C90097F97D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B4D8ACA225641C80097F97D /* RealmSwift.framework */; };
 		5B4D8ACD225641C90097F97D /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B4D8ACA225641C80097F97D /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B4D8ACE225641C90097F97D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B4D8ACB225641C80097F97D /* Realm.framework */; };
 		5B4D8ACF225641C90097F97D /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B4D8ACB225641C80097F97D /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B53B04C2261391600ECB0A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B53B04B2261391600ECB0A8 /* Main.storyboard */; };
-		5B53B04E22613F5700ECB0A8 /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B53B04D22613F5700ECB0A8 /* SidebarViewController.swift */; };
-		5B53B0502261DDED00ECB0A8 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B53B04F2261DDED00ECB0A8 /* ItemListViewController.swift */; };
+		5B53B04E22613F5700ECB0A8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B53B04D22613F5700ECB0A8 /* ProfileViewController.swift */; };
+		5B53B0502261DDED00ECB0A8 /* ActionListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B53B04F2261DDED00ECB0A8 /* ActionListController.swift */; };
 		5B72C8E5224CE04100AAE16A /* StateDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72C8E4224CE04100AAE16A /* StateDataUtils.swift */; };
 		5B72C8E8224CEAE000AAE16A /* NSBundle+OBCodeSigningInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B72C8E7224CEAE000AAE16A /* NSBundle+OBCodeSigningInfo.m */; };
-		5B7415B62261F87100BBFD79 /* ProfileSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7415B52261F87100BBFD79 /* ProfileSplitViewController.swift */; };
+		5B7415B62261F87100BBFD79 /* MainSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7415B52261F87100BBFD79 /* MainSplitViewController.swift */; };
 		5B7415B82262007C00BBFD79 /* RunableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7415B72262007C00BBFD79 /* RunableController.swift */; };
-		5B7415BA22621B8A00BBFD79 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7415B922621B8A00BBFD79 /* PreferenceViewController.swift */; };
+		5B7415BA22621B8A00BBFD79 /* ProfilePreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7415B922621B8A00BBFD79 /* ProfilePreferencesController.swift */; };
 		5B8E04B921F62F1D005F7CDC /* ChromeStateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8E04B821F62F1D005F7CDC /* ChromeStateData.swift */; };
 		5B8E04BD21F64ADE005F7CDC /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 5B8E04BC21F64ADE005F7CDC /* readme.md */; };
 		5B9D759722492214007D74A4 /* SanboxedSaveStateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D759622492214007D74A4 /* SanboxedSaveStateData.swift */; };
+		5BA8C73922A6AAD200F56FAE /* EventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8C73822A6AAD200F56FAE /* EventsController.swift */; };
 		5BB34CA921E9519600ABCC30 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB34CA821E9519600ABCC30 /* ScriptingBridge.framework */; };
 		5BB34CAB21E951AA00ABCC30 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB34CAA21E951AA00ABCC30 /* Carbon.framework */; };
 		5BB34D7121EB531C00ABCC30 /* Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 5BB34D6F21EB507200ABCC30 /* Bridging-Header.h */; };
@@ -55,7 +60,6 @@
 		5BC01F422210BBB000EECCC1 /* InstanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC01F3F2210B79D00EECCC1 /* InstanceService.swift */; };
 		5BC2D1D821C1165F00C5A255 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BC2D1D721C1165F00C5A255 /* Assets.xcassets */; };
 		5BC2D1E421C11A9B00C5A255 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC2D1E321C11A9B00C5A255 /* String.swift */; };
-		5BC88D9021C2D0C5005B9EEA /* Facade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC88D8F21C2D0C5005B9EEA /* Facade.swift */; };
 		5BCEF0B121D950320082534B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCEF0B021D950320082534B /* Profile.swift */; };
 		5BCEF0B421D950870082534B /* RealmDetachableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCEF0B321D950870082534B /* RealmDetachableObject.swift */; };
 		5BCEF0B921D951220082534B /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCEF0B621D951220082534B /* App.swift */; };
@@ -113,6 +117,7 @@
 
 /* Begin PBXFileReference section */
 		09DC2DECBFA0E981B1F257E9 /* Pods-iOSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSApp.debug.xcconfig"; path = "Target Support Files/Pods-iOSApp/Pods-iOSApp.debug.xcconfig"; sourceTree = "<group>"; };
+		5B033D6C22A523B200504064 /* PreferencesViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreferencesViewController .swift"; sourceTree = "<group>"; };
 		5B0BBB9F227F233D00D4AB46 /* ADragDropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADragDropView.swift; sourceTree = "<group>"; };
 		5B0BBBA0227F233D00D4AB46 /* NSDraggingInfo+FilePathURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDraggingInfo+FilePathURL.swift"; sourceTree = "<group>"; };
 		5B10BE1A21D7E7F900B68865 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +129,9 @@
 		5B10BE2721D84E4500B68865 /* DockAutoHide.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DockAutoHide.scpt; sourceTree = "<group>"; };
 		5B10BE2921D9485400B68865 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5B10BE2B21D9489000B68865 /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
+		5B1196F322999063009D94BE /* App+macos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App+macos.swift"; sourceTree = "<group>"; };
+		5B1196F5229990BD009D94BE /* Profile+macos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+macos.swift"; sourceTree = "<group>"; };
+		5B1196F72299911D009D94BE /* Workflow+macos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Workflow+macos.swift"; sourceTree = "<group>"; };
 		5B26F18221D0229C00073BE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5B26F18521D022B400073BE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		5B38BA6721F5CAC9002F8258 /* CustomApplicationStateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomApplicationStateData.swift; sourceTree = "<group>"; };
@@ -132,24 +140,25 @@
 		5B38BA7121F61A00002F8258 /* BaseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEntity.swift; sourceTree = "<group>"; };
 		5B3A971421CA5EAD00239138 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		5B3A972021CADAA100239138 /* StatusMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenu.swift; sourceTree = "<group>"; };
-		5B3A972A21CAE72200239138 /* Runable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Runable.swift; sourceTree = "<group>"; };
+		5B3A972A21CAE72200239138 /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
 		5B3A973621CBDD9300239138 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		5B3B242C21F664B30085F247 /* Themes.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Themes.gif; sourceTree = "<group>"; };
 		5B3B242D21F664BC0085F247 /* iTerm.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = iTerm.gif; sourceTree = "<group>"; };
 		5B4D8ACA225641C80097F97D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		5B4D8ACB225641C80097F97D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		5B53B04B2261391600ECB0A8 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		5B53B04D22613F5700ECB0A8 /* SidebarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewController.swift; sourceTree = "<group>"; };
-		5B53B04F2261DDED00ECB0A8 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
+		5B53B04D22613F5700ECB0A8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5B53B04F2261DDED00ECB0A8 /* ActionListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionListController.swift; sourceTree = "<group>"; };
 		5B72C8E4224CE04100AAE16A /* StateDataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDataUtils.swift; sourceTree = "<group>"; };
 		5B72C8E6224CEAE000AAE16A /* NSBundle+OBCodeSigningInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+OBCodeSigningInfo.h"; sourceTree = "<group>"; };
 		5B72C8E7224CEAE000AAE16A /* NSBundle+OBCodeSigningInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+OBCodeSigningInfo.m"; sourceTree = "<group>"; };
-		5B7415B52261F87100BBFD79 /* ProfileSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSplitViewController.swift; sourceTree = "<group>"; };
+		5B7415B52261F87100BBFD79 /* MainSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSplitViewController.swift; sourceTree = "<group>"; };
 		5B7415B72262007C00BBFD79 /* RunableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunableController.swift; sourceTree = "<group>"; };
-		5B7415B922621B8A00BBFD79 /* PreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
+		5B7415B922621B8A00BBFD79 /* ProfilePreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePreferencesController.swift; sourceTree = "<group>"; };
 		5B8E04B821F62F1D005F7CDC /* ChromeStateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromeStateData.swift; sourceTree = "<group>"; };
 		5B8E04BC21F64ADE005F7CDC /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		5B9D759622492214007D74A4 /* SanboxedSaveStateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanboxedSaveStateData.swift; sourceTree = "<group>"; };
+		5BA8C73822A6AAD200F56FAE /* EventsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsController.swift; sourceTree = "<group>"; };
 		5BB34CA821E9519600ABCC30 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		5BB34CAA21E951AA00ABCC30 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		5BB34CB821E95CA100ABCC30 /* libpthread.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libpthread.tbd; path = usr/lib/libpthread.tbd; sourceTree = SDKROOT; };
@@ -170,7 +179,6 @@
 		5BC2D1DC21C1165F00C5A255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BC2D1E321C11A9B00C5A255 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		5BC2D1F121C1BBB000C5A255 /* DesktopApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DesktopApp.entitlements; sourceTree = "<group>"; };
-		5BC88D8F21C2D0C5005B9EEA /* Facade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facade.swift; sourceTree = "<group>"; };
 		5BC88E9121C579C2005B9EEA /* Silica.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Silica.framework; sourceTree = "<group>"; };
 		5BC88E9A21C57B7C005B9EEA /* BBLBasics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BBLBasics.framework; sourceTree = "<group>"; };
 		5BCEF0B021D950320082534B /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -219,6 +227,7 @@
 		31B05F57151A20A0BDF50D50 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5B8E04BC21F64ADE005F7CDC /* readme.md */,
 				5BB34CB821E95CA100ABCC30 /* libpthread.tbd */,
 				5BB34CAA21E951AA00ABCC30 /* Carbon.framework */,
 				5BB34CA821E9519600ABCC30 /* ScriptingBridge.framework */,
@@ -229,6 +238,17 @@
 				D282353F31F02984296287CC /* Pods_iOSApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B033D6B22A5236C00504064 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				5B53B04F2261DDED00ECB0A8 /* ActionListController.swift */,
+				5B7415B72262007C00BBFD79 /* RunableController.swift */,
+				5BA8C73822A6AAD200F56FAE /* EventsController.swift */,
+				5B7415B922621B8A00BBFD79 /* ProfilePreferencesController.swift */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		5B0BBB9E227F232F00D4AB46 /* DragDrop */ = {
@@ -254,12 +274,22 @@
 			path = Scripts;
 			sourceTree = "<group>";
 		};
+		5B1196F222998FE3009D94BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5B1196F322999063009D94BE /* App+macos.swift */,
+				5B1196F5229990BD009D94BE /* Profile+macos.swift */,
+				5B1196F72299911D009D94BE /* Workflow+macos.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5B38BA6E21F5F394002F8258 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				5B38BA6721F5CAC9002F8258 /* CustomApplicationStateData.swift */,
 				5BCEF0B321D950870082534B /* RealmDetachableObject.swift */,
-				5B3A972A21CAE72200239138 /* Runable.swift */,
+				5B3A972A21CAE72200239138 /* Name.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -298,15 +328,11 @@
 			isa = PBXGroup;
 			children = (
 				5BC01F3F2210B79D00EECCC1 /* InstanceService.swift */,
-				5B3A971421CA5EAD00239138 /* Utils.swift */,
 				5B10BE2921D9485400B68865 /* Extensions.swift */,
 				5B38BA6E21F5F394002F8258 /* Protocols */,
 				5B38BA6F21F5F46D002F8258 /* Enums */,
-				5B38BA7021F5F540002F8258 /* State Data */,
 				5BC88E5F21C55AE0005B9EEA /* Model */,
-				5BB34C9E21E94F7900ABCC30 /* Objective-C */,
 				5BF37D5021D250C7003E80A8 /* Localizable.strings */,
-				5B10BE1C21D7F2E800B68865 /* Scripts */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -327,12 +353,11 @@
 			isa = PBXGroup;
 			children = (
 				5B53B04B2261391600ECB0A8 /* Main.storyboard */,
-				5B53B04D22613F5700ECB0A8 /* SidebarViewController.swift */,
-				5B7415B52261F87100BBFD79 /* ProfileSplitViewController.swift */,
-				5B53B04F2261DDED00ECB0A8 /* ItemListViewController.swift */,
-				5B7415B72262007C00BBFD79 /* RunableController.swift */,
-				5B7415B922621B8A00BBFD79 /* PreferenceViewController.swift */,
 				5BF091D222626B1200406268 /* PrefWindow.swift */,
+				5B7415B52261F87100BBFD79 /* MainSplitViewController.swift */,
+				5B53B04D22613F5700ECB0A8 /* ProfileViewController.swift */,
+				5B033D6C22A523B200504064 /* PreferencesViewController .swift */,
+				5B033D6B22A5236C00504064 /* Profile */,
 			);
 			name = Preferences;
 			sourceTree = "<group>";
@@ -371,7 +396,6 @@
 				5BC2D1D121C1165C00C5A255 /* Products */,
 				8329C9A7EDAF54269599E7A2 /* Pods */,
 				31B05F57151A20A0BDF50D50 /* Frameworks */,
-				5B8E04BC21F64ADE005F7CDC /* readme.md */,
 				5BC01EEF22106A7E00EECCC1 /* .travis.yml */,
 				5BC01EF022106EFF00EECCC1 /* Icons */,
 				5B3B242B21F6648B0085F247 /* doc_assets */,
@@ -390,9 +414,12 @@
 		5BC2D1D221C1165C00C5A255 /* DesktopApp */ = {
 			isa = PBXGroup;
 			children = (
-				5B0BBB9E227F232F00D4AB46 /* DragDrop */,
 				5B10BE1A21D7E7F900B68865 /* AppDelegate.swift */,
+				5B3A971421CA5EAD00239138 /* Utils.swift */,
+				5B38BA7021F5F540002F8258 /* State Data */,
+				5B1196F222998FE3009D94BE /* Model */,
 				5BC88E6121C55B29005B9EEA /* User Interface */,
+				5B10BE1C21D7F2E800B68865 /* Scripts */,
 				5BC88E6421C55DE3005B9EEA /* Supporting Filess */,
 			);
 			path = DesktopApp;
@@ -401,8 +428,11 @@
 		5BC88E5F21C55AE0005B9EEA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5BCEF0AF21D950210082534B /* Entities */,
-				5BC88D8F21C2D0C5005B9EEA /* Facade.swift */,
+				5B38BA7121F61A00002F8258 /* BaseEntity.swift */,
+				5BCEF0B621D951220082534B /* App.swift */,
+				5BCEF0B021D950320082534B /* Profile.swift */,
+				5BCEF0B821D951220082534B /* Workflow.swift */,
+				5BCEF0B721D951220082534B /* Window.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -419,23 +449,13 @@
 		5BC88E6421C55DE3005B9EEA /* Supporting Filess */ = {
 			isa = PBXGroup;
 			children = (
+				5BB34C9E21E94F7900ABCC30 /* Objective-C */,
+				5B0BBB9E227F232F00D4AB46 /* DragDrop */,
 				5BC2D1F121C1BBB000C5A255 /* DesktopApp.entitlements */,
 				5BC2D1DC21C1165F00C5A255 /* Info.plist */,
 				5BC2D1D721C1165F00C5A255 /* Assets.xcassets */,
 			);
 			name = "Supporting Filess";
-			sourceTree = "<group>";
-		};
-		5BCEF0AF21D950210082534B /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				5B38BA7121F61A00002F8258 /* BaseEntity.swift */,
-				5BCEF0B621D951220082534B /* App.swift */,
-				5BCEF0B021D950320082534B /* Profile.swift */,
-				5BCEF0B821D951220082534B /* Workflow.swift */,
-				5BCEF0B721D951220082534B /* Window.swift */,
-			);
-			path = Entities;
 			sourceTree = "<group>";
 		};
 		8329C9A7EDAF54269599E7A2 /* Pods */ = {
@@ -484,6 +504,7 @@
 				0CC1D058A070E6A260DBFF48 /* [CP] Embed Pods Frameworks */,
 				5B4D8AD0225641C90097F97D /* Embed Frameworks */,
 				5BE862AD2263C80800FE0D63 /* ShellScript */,
+				5B033D6A22A522BA00504064 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -588,6 +609,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DesktopProfiles/Pods-DesktopProfiles-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/KeyHolder/KeyHolder.framework",
+				"${BUILT_PRODUCTS_DIR}/LaunchAtLogin/LaunchAtLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/Magnet/Magnet.framework",
 				"${BUILT_PRODUCTS_DIR}/ShellOut/ShellOut.framework",
 			);
@@ -596,6 +618,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeyHolder.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LaunchAtLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Magnet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ShellOut.framework",
 			);
@@ -625,6 +648,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		5B033D6A22A522BA00504064 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/Pods/LaunchAtLogin/LaunchAtLogin/copy-helper.sh\"\n";
 		};
 		5BE862AD2263C80800FE0D63 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -684,13 +724,16 @@
 			files = (
 				5B38BA6821F5CAC9002F8258 /* CustomApplicationStateData.swift in Sources */,
 				5BF091D322626B1200406268 /* PrefWindow.swift in Sources */,
-				5B3A972B21CAE72200239138 /* Runable.swift in Sources */,
-				5B7415BA22621B8A00BBFD79 /* PreferenceViewController.swift in Sources */,
+				5B3A972B21CAE72200239138 /* Name.swift in Sources */,
+				5B7415BA22621B8A00BBFD79 /* ProfilePreferencesController.swift in Sources */,
+				5BA8C73922A6AAD200F56FAE /* EventsController.swift in Sources */,
 				5B0BBBA2227F233D00D4AB46 /* NSDraggingInfo+FilePathURL.swift in Sources */,
 				5BCEF0B421D950870082534B /* RealmDetachableObject.swift in Sources */,
-				5B7415B62261F87100BBFD79 /* ProfileSplitViewController.swift in Sources */,
+				5B7415B62261F87100BBFD79 /* MainSplitViewController.swift in Sources */,
 				5B72C8E8224CEAE000AAE16A /* NSBundle+OBCodeSigningInfo.m in Sources */,
-				5B53B04E22613F5700ECB0A8 /* SidebarViewController.swift in Sources */,
+				5B53B04E22613F5700ECB0A8 /* ProfileViewController.swift in Sources */,
+				5B1196F422999063009D94BE /* App+macos.swift in Sources */,
+				5B033D6D22A523B200504064 /* PreferencesViewController .swift in Sources */,
 				5BCEF0BB21D951220082534B /* Window.swift in Sources */,
 				5BCEF0BD21D951220082534B /* Workflow.swift in Sources */,
 				5B38BA6A21F5D404002F8258 /* Errors.swift in Sources */,
@@ -698,7 +741,6 @@
 				5B3A972121CADAA100239138 /* StatusMenu.swift in Sources */,
 				5B0BBBA1227F233D00D4AB46 /* ADragDropView.swift in Sources */,
 				5B3A971521CA5EAD00239138 /* Utils.swift in Sources */,
-				5BC88D9021C2D0C5005B9EEA /* Facade.swift in Sources */,
 				5BC01F412210BA3E00EECCC1 /* InstanceService.swift in Sources */,
 				5B10BE1B21D7E7F900B68865 /* AppDelegate.swift in Sources */,
 				5B8E04B921F62F1D005F7CDC /* ChromeStateData.swift in Sources */,
@@ -706,8 +748,10 @@
 				5BCEF0B121D950320082534B /* Profile.swift in Sources */,
 				5B10BE2A21D9485400B68865 /* Extensions.swift in Sources */,
 				5B38BA7221F61A00002F8258 /* BaseEntity.swift in Sources */,
+				5B1196F82299911D009D94BE /* Workflow+macos.swift in Sources */,
 				5B38BA6C21F5E793002F8258 /* DefaultStateData.swift in Sources */,
-				5B53B0502261DDED00ECB0A8 /* ItemListViewController.swift in Sources */,
+				5B1196F6229990BD009D94BE /* Profile+macos.swift in Sources */,
+				5B53B0502261DDED00ECB0A8 /* ActionListController.swift in Sources */,
 				5B9D759722492214007D74A4 /* SanboxedSaveStateData.swift in Sources */,
 				5BCEF0B921D951220082534B /* App.swift in Sources */,
 				5B72C8E5224CE04100AAE16A /* StateDataUtils.swift in Sources */,
@@ -949,7 +993,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mamiksik.DesktopProfiles;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Objective-C/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DesktopApp/Objective-C/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -985,7 +1029,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mamiksik.DesktopProfiles;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Objective-C/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DesktopApp/Objective-C/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

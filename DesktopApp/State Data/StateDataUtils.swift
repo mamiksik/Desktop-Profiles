@@ -16,7 +16,6 @@
    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-
 import Foundation
 
 class StateDataUtils {
@@ -26,22 +25,22 @@ class StateDataUtils {
             try? fm.copyItem(at: from, to: to)
         }
     }
-    
+
     static func clean(at: URL) throws {
         let fm = FileManager.default
-        if fm.isDeletableFile(atPath: at.path){
+        if fm.isDeletableFile(atPath: at.path) {
             try fm.removeItem(atPath: at.path)
         }
     }
-    
+
     static func createDirectory(at: URL) throws {
         let fm = FileManager.default
         if !fm.fileExists(atPath: at.path) {
             try fm.createDirectory(at: at, withIntermediateDirectories: true, attributes: [:])
         }
     }
-    
-    static func stateDataPath(library: URL, bundle: String) -> URL{
+
+    static func stateDataPath(library: URL, bundle: String) -> URL {
         return library.appendingPathComponent("\(bundle).savedState")
     }
 }

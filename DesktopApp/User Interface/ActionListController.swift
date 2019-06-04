@@ -19,40 +19,36 @@
 import Cocoa
 import RealmSwift
 
-protocol ActionItem {
-    var name: String { get }
+struct Actions  {
+    static let preferences = "Preferences"
+    static let events = "Events"
 }
 
-class ActionPreferences: ActionItem {
-    var name = "Preferences"
+class ActionPreferences: Name {
+    var name = Actions.preferences
 }
 
-extension Notification.Name {
-    struct ProfileListNotification {
-        static let profileSelected = Notification.Name("profileSelected")
-        static let profileUnselected = Notification.Name("profileUnselected")
-    }
+class ActionEvents: Name {
+    var name = Actions.events
 }
 
-class ItemListViewController: NSViewController {
-    
+class ActionListController: NSViewController {
+
     @IBOutlet var dragDropView: ADragDropView!
-    @IBOutlet weak var sidebar: NSOutlineView!
+    @IBOutlet weak var list: NSOutlineView!
 
-//    var realm: Realm?
     var profile: Profile?
-    var items: [ActionItem] = []
+    var items: [Name] = []
     let dialog = NSOpenPanel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        sidebar.dataSource = self
-        sidebar.delegate = self
-        
+        list.dataSource = self
+        list.delegate = self
+
         dragDropView.delegate = self
         dragDropView.acceptedFileExtensions = ["app", "workflow"]
-//        dragDropView.highlight = true
-        
+
         dialog.showsResizeIndicator     = true
         dialog.showsHiddenFiles         = false
         dialog.canChooseDirectories     = false
@@ -62,19 +58,20 @@ class ItemListViewController: NSViewController {
         dialog.allowedFileTypes         = ["app", "workflow"]
         dialog.isReleasedWhenClosed = true
     }
-    
+
     override func viewWillAppear() {
         reloadData()
+        list.selectRowIndexes([0], byExtendingSelection: false)
     }
-    
+
     deinit {
         print("ItemListViewController deinitialized")
     }
-    
+
     @IBAction func restoreProfile (_ sender: Any) {
         profile?.restoreAll()
     }
-    
+
     @IBAction func performAction (_ sender: NSSegmentedControl) {
          if sender.selectedSegment == 0 {
             dialog.beginSheetModal(
@@ -86,7 +83,7 @@ class ItemListViewController: NSViewController {
                     else {
                         return
                     }
-                    
+
                     self.addRunable(path)
                 })
          } else {
@@ -118,13 +115,13 @@ class ItemListViewController: NSViewController {
             } catch {
                 NSLog(error.localizedDescription)
             }
-            
+
             self.reloadData()
         }
     }
-    
+
     func removeRunable () {
-        let index: Int = sidebar.selectedRow
+        let index: Int = list.selectedRow
 
         // 0 is preferences
         if index > 0 {
@@ -134,7 +131,9 @@ class ItemListViewController: NSViewController {
             else {
                 return
             }
+
             do {
+
                 if let app = realm.object(ofType: App.self, forPrimaryKey: detachedObj.id) {
                     try app.stateData.clean()
                     try realm.write {
@@ -155,34 +154,40 @@ class ItemListViewController: NSViewController {
             } catch {
                 NSLog(error.localizedDescription)
             }
-            
+
             reloadData()
-            sidebar.selectRowIndexes([index - 1], byExtendingSelection: false)
+            list.selectRowIndexes([index - 1], byExtendingSelection: false)
         }
     }
 
     func reloadData() {
-        profile = (self.parent as? ProfileSplitViewController)?.profile
+        profile = (self.parent as? MainSplitViewController)?.profile
 
         items = []
         if profile != nil {
             items.append(ActionPreferences())
+
+            let bools: Bool = UserDefaults.standard.bool(forKey: .betaFeatures)
+            if UserDefaults.standard.bool(forKey: .betaFeatures) {
+                items.append(ActionEvents())
+            }
+            
             items.append(contentsOf: profile!.apps.toArray())
             items.append(contentsOf: profile!.workflows.toArray())
         }
 
-        sidebar.reloadData()
+        list.reloadData()
     }
 }
 
-extension ItemListViewController: NSOutlineViewDataSource {
+extension ActionListController: NSOutlineViewDataSource {
 
-    // Number of items in the sidebar
+    // Number of items in the list
     func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
         return items.count
     }
 
-    // Items to be added to sidebar
+    // Items to be added to list
     func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
         return items[index]
     }
@@ -198,17 +203,17 @@ extension ItemListViewController: NSOutlineViewDataSource {
             if outlineView.selectedRow == -1 { return }
 
             let item = items[outlineView.selectedRow]
-            (self.parent as? ProfileSplitViewController)?.updateView(item)
+            (self.parent as? MainSplitViewController)?.updateSelection(item)
         }
     }
 
 }
 
-extension ItemListViewController: NSOutlineViewDelegate {
+extension ActionListController: NSOutlineViewDelegate {
 
     func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
 
-        if let item = item as? ActionItem {
+        if let item = item as? Name {
             if tableColumn?.identifier == .name {
                 let cellView = outlineView.makeView(withIdentifier: .name, owner: self) as? NSTableCellView
                 if let textField = cellView?.textField {
@@ -219,14 +224,17 @@ extension ItemListViewController: NSOutlineViewDelegate {
             } else {
                 let cellView = outlineView.makeView(withIdentifier: .icon, owner: self) as? NSTableCellView
                 let imageView = cellView?.subviews[0] as? NSImageView
-                
+
                 if let app = item as? App {
                     imageView?.image = NSWorkspace.shared.icon(forFile: app.path)
                 } else if let _ = item as? Workflow {
                     imageView?.image = NSImage(named: NSImage.advancedName)
+                } else if item.name == Actions.events {
+                    imageView?.image = NSImage(named: NSImage.userAccountsName)
                 } else {
                     imageView?.image = NSImage(named: NSImage.preferencesGeneralName)
                 }
+
                 imageView?.sizeToFit()
                 return cellView
             }
@@ -236,11 +244,11 @@ extension ItemListViewController: NSOutlineViewDelegate {
     }
 }
 
-extension ItemListViewController: ADragDropViewDelegate {
+extension ActionListController: ADragDropViewDelegate {
     func dragDropView(_ dragDropView: ADragDropView, droppedFileWithURL URL: URL) {
         addRunable(URL)
     }
-    
+
     func dragDropView(_ dragDropView: ADragDropView, droppedFilesWithURLs URLs: [URL]) {
         for url in URLs {
             addRunable(url)
