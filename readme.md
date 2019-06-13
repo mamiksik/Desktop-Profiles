@@ -27,7 +27,7 @@ With further development the app could also be utilized in classrooms allowing t
 
 ### Profile changing system settings
 
-|![](doc_assets/Themes.gif)|
+|![](doc_assets/DarkModeNewUI.gif)|
 |:---:|
 
 | ![](doc_assets/Dark-A.png) | ![](doc_assets/Dark-B.png) |
@@ -36,6 +36,9 @@ With further development the app could also be utilized in classrooms allowing t
 >Profiles can be invoked by a keyboard shortcut.
 
 ### Profile restoring app internal state and app layout
+
+|![](doc_assets/FinderNewUI.gif)|
+|:---:|
 
 |![](doc_assets/iTerm.gif)|
 |:---:|
