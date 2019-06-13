@@ -19,17 +19,31 @@
 import Cocoa
 import RealmSwift
 
-class ProfileSplitViewController: NSSplitViewController {
-    
-    let realm: Realm? = try? Realm()
+enum SplitViews: Int, CaseIterable {
+    case profiles, actions, preferences, runnable, events
+}
 
-    var listView: NSSplitViewItem?
-    var runnableView: NSSplitViewItem?
-    var preferencesView: NSSplitViewItem?
-    var dummView: NSSplitViewItem?
-    var item: ActionItem?
+extension Array {
+    subscript(index: SplitViews) -> Element {
+        return self[index.rawValue]
+    }
+}
+
+class InvisibleDividerNSSplitView: NSSplitView {
+    override var dividerThickness: CGFloat {
+            return 0.0
+    }
+}
+
+class MainSplitViewController: NSSplitViewController {
+
+    let realm: Realm? = try? Realm()
+    var item: Name?
     var profileID: String?
-    
+    var splitViews: [NSView] {
+        return splitView.subviews
+    }
+
     var profile: Profile? {
         if profileID == nil {
             return nil
@@ -39,15 +53,6 @@ class ProfileSplitViewController: NSSplitViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        listView = self.splitViewItems[0]
-        preferencesView = self.splitViewItems[1]
-        runnableView = self.splitViewItems[2]
-        dummView = self.splitViewItems[3]
-
-        if runnableView != nil {
-            self.removeSplitViewItem(preferencesView!)
-            self.removeSplitViewItem(runnableView!)
-        }
 
         NotificationCenter.default.addObserver(
             self,
@@ -55,20 +60,22 @@ class ProfileSplitViewController: NSSplitViewController {
             name: Notification.Name.ProfileListNotification.profileSelected,
             object: nil
         )
-        
+
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(unsetProfile),
             name: Notification.Name.ProfileListNotification.profileUnselected,
             object: nil
         )
+
+        updateView(nil)
     }
-    
+
     deinit {
         NotificationCenter.default.removeObserver(self)
         print("ProfileSplitViewController deinitialized")
     }
-    
+
     @objc func setProfile(_ notification: Notification) {
         guard
             let id = notification.object as? String,
@@ -78,30 +85,49 @@ class ProfileSplitViewController: NSSplitViewController {
         }
 
         if id != profileID {
-            profileID = id
-            updateView(nil)
+            updateView(id)
         }
     }
 
     @objc func unsetProfile(_ notification: Notification) {
-        profileID = nil
+        updateView(nil)
     }
 
-    func updateView(_ item: ActionItem?) {
-        if item == nil {
-            listView?.viewController.viewWillAppear()
+    private func updateView(_ id: String?) {
+
+
+        for view in splitViewItems {
+            view.isCollapsed = true
         }
 
-        removeChild(at: 1)
+        self.profileID = id
+        splitViewItems[.profiles].isCollapsed = false
+
+        if profileID != nil {
+            splitViewItems[.actions].isCollapsed = false
+            splitViewItems[.actions].viewController.updateView()
+        }
+    }
+
+    func updateSelection(_ item: Name) {
+
         self.item = item
 
-        if  item == nil {
-            insertSplitViewItem(dummView!, at: 1)
-        } else if  item!.name == "Preferences"{
-            insertSplitViewItem(preferencesView!, at: 1)
-        } else {
-            insertSplitViewItem(runnableView!, at: 1)
-            runnableView?.viewController.viewWillAppear()
+        for view in SplitViews.preferences.rawValue...SplitViews.events.rawValue {
+            splitViewItems[view].isCollapsed = true
+        }
+
+        switch item.name {
+        case Actions.preferences:
+            splitViewItems[.preferences].isCollapsed = false
+            splitViewItems[.preferences].viewController.updateView()
+        case Actions.events:
+            splitViewItems[.events].isCollapsed = false
+            splitViewItems[.events].viewController.updateView()
+        default:
+            splitViews[.runnable].isHidden = false
+            splitViewItems[.runnable].isCollapsed = false
+            splitViewItems[.runnable].viewController.updateView()
         }
     }
 }

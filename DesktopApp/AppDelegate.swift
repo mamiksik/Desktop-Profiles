@@ -19,15 +19,49 @@
 import Cocoa
 import LaunchAtLogin
 import CoreWLAN
+import RealmSwift
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+
+    override init() {
+        super.init()
+        Migrations.configureMigration()
+    }
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         LaunchAtLogin.isEnabled = UserDefaults.standard.bool(forKey: "launchOnStartup")
 
-//        CWWiFiClient.shared().startMonitoringEvent(with: .ssidDidChange)
+        if UserDefaults.standard.bool(forKey: .betaFeatures) {
+        let client = CWWiFiClient.shared()
+            client.delegate = self
+            do {
+                try client.startMonitoringEvent(with: .ssidDidChange)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
+    }
+}
+
+extension AppDelegate: CWEventDelegate {
+    func ssidDidChangeForWiFiInterface(withName interfaceName: String) {
+
+        guard
+            let realm = try? Realm(),
+            let interface = CWWiFiClient.shared().interface(withName: interfaceName),
+            let name = interface.ssid()
+            else {
+                return
+        }
+
+        let results = realm.objects(Profile.self).filter("wifiName == %s AND wifiName != ''", name)
+
+        for result in results {
+           result.restoreAll()
+        }
     }
 }

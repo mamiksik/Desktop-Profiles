@@ -28,6 +28,8 @@ class Profile: BaseEntity {
     @objc dynamic var accentColour: Color = .keep
     @objc dynamic var closeOtherApps: Bool = false
 
+    @objc dynamic var wifiName = ""
+
     @objc dynamic var shortcutKeyCode: Int = -1
     @objc dynamic var shortcutModifierCode: Int = -1
 

@@ -16,40 +16,29 @@
  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import Cocoa
+
+import Foundation
 import RealmSwift
 
-class EventsController: NSViewController {
+final class Migrations {
 
-    @IBOutlet weak var wifiName: NSTextField!
+    static let currentSchemaVersion: UInt64 = 0
 
-    var profile: Profile? = nil
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    static func configureMigration() {
+        let config = Realm.Configuration(
+            schemaVersion: 1,
+            migrationBlock: { migration, oldSchemaVersion in
+                if oldSchemaVersion < 2 {
+                    migrateFrom0To1(with: migration)
+                }
+        })
+        Realm.Configuration.defaultConfiguration = config
     }
 
-    override func updateView() {
-        profile = (self.parent as? MainSplitViewController)?.profile
-
-        if profile == nil {
-            return
-        }
-
-        wifiName.stringValue = profile!.wifiName
-    }
-
-    @IBAction func wifiNameEntered(_ sender: Any) {
-        guard
-            let profile = self.profile,
-            let realm = try? Realm()
-            else {
-                return
-        }
-
-        try? realm.write {
-            profile.wifiName = wifiName.stringValue
+    static func migrateFrom0To1(with migration: Migration) {
+        // Add an email property
+        migration.enumerateObjects(ofType: Profile.className()) { _, newObject in
+            newObject!["wifiName"] = ""
         }
     }
 }
-

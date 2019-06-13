@@ -58,6 +58,7 @@ class StatusMenu: NSObject, NSWindowDelegate {
 
     deinit {
         notificationToken?.invalidate()
+        HotKeyCenter.shared.unregisterAll()
     }
 
     func constructMenu() {

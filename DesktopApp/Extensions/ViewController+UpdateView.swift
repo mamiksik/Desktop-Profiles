@@ -15,41 +15,9 @@
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-
 import Cocoa
-import RealmSwift
 
-class EventsController: NSViewController {
-
-    @IBOutlet weak var wifiName: NSTextField!
-
-    var profile: Profile? = nil
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    override func updateView() {
-        profile = (self.parent as? MainSplitViewController)?.profile
-
-        if profile == nil {
-            return
-        }
-
-        wifiName.stringValue = profile!.wifiName
-    }
-
-    @IBAction func wifiNameEntered(_ sender: Any) {
-        guard
-            let profile = self.profile,
-            let realm = try? Realm()
-            else {
-                return
-        }
-
-        try? realm.write {
-            profile.wifiName = wifiName.stringValue
-        }
+extension NSViewController {
+    @objc func updateView() {
     }
 }
-

@@ -43,6 +43,8 @@
 		5B7415B62261F87100BBFD79 /* MainSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7415B52261F87100BBFD79 /* MainSplitViewController.swift */; };
 		5B7415B82262007C00BBFD79 /* RunableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7415B72262007C00BBFD79 /* RunableController.swift */; };
 		5B7415BA22621B8A00BBFD79 /* ProfilePreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7415B922621B8A00BBFD79 /* ProfilePreferencesController.swift */; };
+		5B8C3CA122A7D43A00705D54 /* ViewController+UpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8C3CA022A7D43A00705D54 /* ViewController+UpdateView.swift */; };
+		5B8C3CA622A82CD200705D54 /* Migrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8C3CA522A82CD200705D54 /* Migrations.swift */; };
 		5B8E04B921F62F1D005F7CDC /* ChromeStateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8E04B821F62F1D005F7CDC /* ChromeStateData.swift */; };
 		5B8E04BD21F64ADE005F7CDC /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 5B8E04BC21F64ADE005F7CDC /* readme.md */; };
 		5B9D759722492214007D74A4 /* SanboxedSaveStateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D759622492214007D74A4 /* SanboxedSaveStateData.swift */; };
@@ -155,6 +157,8 @@
 		5B7415B52261F87100BBFD79 /* MainSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSplitViewController.swift; sourceTree = "<group>"; };
 		5B7415B72262007C00BBFD79 /* RunableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunableController.swift; sourceTree = "<group>"; };
 		5B7415B922621B8A00BBFD79 /* ProfilePreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePreferencesController.swift; sourceTree = "<group>"; };
+		5B8C3CA022A7D43A00705D54 /* ViewController+UpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+UpdateView.swift"; sourceTree = "<group>"; };
+		5B8C3CA522A82CD200705D54 /* Migrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Migrations.swift; sourceTree = "<group>"; };
 		5B8E04B821F62F1D005F7CDC /* ChromeStateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromeStateData.swift; sourceTree = "<group>"; };
 		5B8E04BC21F64ADE005F7CDC /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		5B9D759622492214007D74A4 /* SanboxedSaveStateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanboxedSaveStateData.swift; sourceTree = "<group>"; };
@@ -362,6 +366,14 @@
 			name = Preferences;
 			sourceTree = "<group>";
 		};
+		5B8C3C9F22A7D35700705D54 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5B8C3CA022A7D43A00705D54 /* ViewController+UpdateView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		5BB34C9E21E94F7900ABCC30 /* Objective-C */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,6 +428,7 @@
 			children = (
 				5B10BE1A21D7E7F900B68865 /* AppDelegate.swift */,
 				5B3A971421CA5EAD00239138 /* Utils.swift */,
+				5B8C3C9F22A7D35700705D54 /* Extensions */,
 				5B38BA7021F5F540002F8258 /* State Data */,
 				5B1196F222998FE3009D94BE /* Model */,
 				5BC88E6121C55B29005B9EEA /* User Interface */,
@@ -433,6 +446,7 @@
 				5BCEF0B021D950320082534B /* Profile.swift */,
 				5BCEF0B821D951220082534B /* Workflow.swift */,
 				5BCEF0B721D951220082534B /* Window.swift */,
+				5B8C3CA522A82CD200705D54 /* Migrations.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -742,6 +756,8 @@
 				5B0BBBA1227F233D00D4AB46 /* ADragDropView.swift in Sources */,
 				5B3A971521CA5EAD00239138 /* Utils.swift in Sources */,
 				5BC01F412210BA3E00EECCC1 /* InstanceService.swift in Sources */,
+				5B8C3CA622A82CD200705D54 /* Migrations.swift in Sources */,
+				5B8C3CA122A7D43A00705D54 /* ViewController+UpdateView.swift in Sources */,
 				5B10BE1B21D7E7F900B68865 /* AppDelegate.swift in Sources */,
 				5B8E04B921F62F1D005F7CDC /* ChromeStateData.swift in Sources */,
 				5B10BE2C21D9489000B68865 /* Realm.swift in Sources */,

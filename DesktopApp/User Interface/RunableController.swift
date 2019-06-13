@@ -36,7 +36,7 @@ class RunableController: NSViewController {
         super.viewDidLoad()
     }
 
-    override func viewWillAppear() {
+    override func updateView() {
         guard
             let parent = self.parent as? MainSplitViewController,
             let item = parent.item as? BaseEntity,

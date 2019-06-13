@@ -32,7 +32,7 @@ class ProfilePreferencesController: NSViewController {
     var profile: Profile?
 
     deinit {
-        print("PreferenceViewController deinitialized")
+        print("ProfilePreferencesController deinitialized")
     }
 
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ class ProfilePreferencesController: NSViewController {
         name.delegate = self
     }
 
-    override func viewWillAppear() {
+    override func updateView() {
         profile = (self.parent as? MainSplitViewController)?.profile
 
         if profile != nil {

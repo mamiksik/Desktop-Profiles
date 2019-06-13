@@ -26,7 +26,6 @@ enum InstanceServiceCommand: Int {
 
 protocol InstanceServiceDelegate: AnyObject {
     func connectedDevicesChanged (manager: InstanceService, connectedDevices: [String])
-//    func profileListReceived (manager : InstanceService, profiles: [String])
     func profileListReceived (manager: InstanceService, host: String, profiles: [String])
 }
 extension InstanceServiceDelegate {
@@ -52,7 +51,7 @@ class InstanceService: NSObject {
     weak var delegate: InstanceServiceDelegate?
 
     lazy var session: MCSession = {
-        let session = MCSession(peer: self.myPeerId, securityIdentity: nil, encryptionPreference: .optional)
+        let session = MCSession(peer: self.myPeerId, securityIdentity: nil, encryptionPreference: .required)
         session.delegate = self
         return session
     }()
@@ -105,7 +104,10 @@ extension InstanceService: MCNearbyServiceAdvertiserDelegate {
         NSLog("%@", "didNotStartAdvertisingPeer: \(error)")
     }
 
-    func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
+    func advertiser(_ advertiser: MCNearbyServiceAdvertiser,
+                    didReceiveInvitationFromPeer peerID: MCPeerID,
+                    withContext context: Data?,
+                    invitationHandler: @escaping (Bool, MCSession?) -> Void) {
         NSLog("%@", "didReceiveInvitationFromPeer \(peerID)")
        invitationHandler(true, self.session)
     }
@@ -118,7 +120,9 @@ extension InstanceService: MCNearbyServiceBrowserDelegate {
         NSLog("%@", "didNotStartBrowsingForPeers: \(error)")
     }
 
-    func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String: String]?) {
+    func browser(_ browser: MCNearbyServiceBrowser,
+                 foundPeer peerID: MCPeerID,
+                 withDiscoveryInfo info: [String: String]?) {
         NSLog("%@", "foundPeer: \(peerID)")
         NSLog("%@", "invitePeer: \(peerID)")
 
@@ -149,21 +153,31 @@ extension InstanceService: MCSessionDelegate {
         }
 
         if peerID.displayName.contains("osx") {
-            if let profiles = NSKeyedUnarchiver.unarchiveObject(with: data) as? Array<String> {
+            if let profiles = NSKeyedUnarchiver.unarchiveObject(with: data) as? [String] {
                 delegate?.profileListReceived(manager: self, host: peerID.displayName, profiles: profiles)
             }
         }
     }
 
-    func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
+    func session(_ session: MCSession,
+                 didReceive stream: InputStream,
+                 withName streamName: String,
+                 fromPeer peerID: MCPeerID) {
         NSLog("%@", "didReceiveStream")
     }
 
-    func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
+    func session(_ session: MCSession,
+                 didStartReceivingResourceWithName resourceName: String,
+                 fromPeer peerID: MCPeerID,
+                 with progress: Progress) {
         NSLog("%@", "didStartReceivingResourceWithName")
     }
 
-    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
+    func session(_ session: MCSession,
+                 didFinishReceivingResourceWithName resourceName: String,
+                 fromPeer peerID: MCPeerID,
+                 at localURL: URL?,
+                 withError error: Error?) {
         NSLog("%@", "didFinishReceivingResourceWithName")
     }
 

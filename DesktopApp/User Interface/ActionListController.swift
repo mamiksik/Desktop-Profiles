@@ -21,7 +21,7 @@ import RealmSwift
 
 struct Actions  {
     static let preferences = "Preferences"
-    static let events = "Events"
+    static let events = "Events (Beta)"
 }
 
 class ActionPreferences: Name {
@@ -56,10 +56,9 @@ class ActionListController: NSViewController {
         dialog.allowsMultipleSelection  = false
         dialog.title                    = "dialog.chose.appOrWorkflow".localized
         dialog.allowedFileTypes         = ["app", "workflow"]
-        dialog.isReleasedWhenClosed = true
     }
 
-    override func viewWillAppear() {
+    override func updateView() {
         reloadData()
         list.selectRowIndexes([0], byExtendingSelection: false)
     }
@@ -230,7 +229,7 @@ extension ActionListController: NSOutlineViewDelegate {
                 } else if let _ = item as? Workflow {
                     imageView?.image = NSImage(named: NSImage.advancedName)
                 } else if item.name == Actions.events {
-                    imageView?.image = NSImage(named: NSImage.userAccountsName)
+                    imageView?.image = NSImage(named: NSImage.cautionName)
                 } else {
                     imageView?.image = NSImage(named: NSImage.preferencesGeneralName)
                 }
