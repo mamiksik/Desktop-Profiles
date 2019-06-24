@@ -59,16 +59,25 @@ extension App {
 
     func close() throws {
         if var pid = try? shellOut(to: "pgrep \(self.name)") {
-            if self.bundleIdentifier != AppSpecificBehaviour.chrome.rawValue {
+            if bundleIdentifier != AppSpecificBehaviour.chrome.rawValue {
                 pid = pid.replacingOccurrences(of: "\n", with: " ")
+                try shellOut(to: "kill \(pid)")
+            } else {
+                try shellOut(to: "killall \"Google Chrome\"")
             }
-            try shellOut(to: "kill \(pid)")
+
         }
     }
 
     func open() throws {
         if AppSpecificBehaviour.finder.rawValue != bundleIdentifier {
-            try shellOut(to: "open -b \(self.bundleIdentifier)")
+            if bundleIdentifier == AppSpecificBehaviour.chrome.rawValue {
+                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+                    _ = try? shellOut(to: "open -b \(self.bundleIdentifier)")
+                }
+            } else {
+                try shellOut(to: "open -b \(self.bundleIdentifier)")
+            }
         }
     }
 }

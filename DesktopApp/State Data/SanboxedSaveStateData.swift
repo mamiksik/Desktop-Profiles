@@ -43,11 +43,13 @@ final class SanboxedStateData: CustomApplicationStateData {
     func copy() throws {
         try app.close()
 
-        try StateDataUtils.createDirectory(at: profileState)
-        try? StateDataUtils.clean(at: profileState)
-        try StateDataUtils.copy(from: systemState, to: profileState)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+            try? StateDataUtils.createDirectory(at: self.profileState)
+            try? StateDataUtils.clean(at: self.profileState)
+            try? StateDataUtils.copy(from: self.systemState, to: self.profileState)
 
-        try app.open()
+            try? self.app.open()
+        }
     }
 
     func restore() throws {
