@@ -1,14 +1,24 @@
 language: objective-c
 osx_image: xcode11.1
 env:
-- LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8
-
+  matrix:
+  - LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8
+  global:
+  - secure: YuznREriMfuzkOcAu7V2gUA85DMB1jKHIIoNm07eWKDyqhquSNtkUfL3riIUfwmpkwAlu7C55NAb9c3G+6BtHhYaH9cEz0pnm1q5ur4p3386YzIQhTnciE/cWA+NB6sBNhng1RDlWfn7GHEaelpbAxTFa/MmBXdmvYM3N/PCCQxECyQUlbf0+zIlxn4gKCho733F++r7/m7GhIay9BNJSTzvDIj530D4r/LfnuX0RnrPfTy0c4I1gT4Jbwqysywy9FszV7JRKhZ6i3PVxKq5WBGJ9x+CnSic+YW2ccKsHmyXHK1UhJFHRQCovc0y5hxW7q6M+NG2j5PRAcp7OR0EByUQDotCEpDlsSw/+/IuOGrQUl51VCnJ4ChxZDpQQ+qJ0A9IcAGN1YKfWUbZjrLqkgkP4BkNxrNfRaxAJUJkHyv2ffupkP2cTpSE9HYGYSGfNKc4BZgPYE9tf0Tyst9UNvfnw2KDGJEZpIiDfud8Yu4bw1zWTY7wKXdTf+5avfWW7WCvoYo821Rt+KrKVqGP7cCSoPdAzU20nfblshrsH0VmJRRBrvTWbFVsM09N0QpiG79tEG3Gl+xmjLAL5VjGmDzQz4Gg1WYtnTkdOom0Yes/kn4ASByDgu7N/s0KMFjOv1krew46yo5aXXvaXQgCf9uuloHnmu4Ixh/7o7HTwLk=
+  - secure: AOHnI0NZigHAreUxp9WvcSXAATvsmJ9puUyNAqgaWZiTBKnSt8As54VP5Z7pyfywBfDgXtn8T3MysNKHflyQ4jXW/7x/IFOXajZ9MfZCI6tyJBw0ra8c8V+9OCLNL5lptAFCtzDOf88RK61da10ye/csBsDPk4njBVYG0j3FkhGlSjZXSZj07jaN4I9EXKXKVdLjHWRVcQ/k50CA1TqShWetLCAW+dJ1y0I/+0I6rKg4AU7sL+GOClfXwQoxjFmRm1LaWViMHDIVf7knSHpT6HrajruLzJ3FQQGYweRa3W9QQ1MQ9oSwMVkel9CcsF/x0v4mN2QA032hvLntCtNZtlNgt2u53TOdvVH3C6NEXT9SjUmo9ZxUDBezomqDmAEmKt1ZmVj1/AUwdkNNaQYYOVzQ3Zav4kpJNaV0nkr1aXQKpmfMeCMsbvZ0T4meobHwWwhPschyjS/r7PjPtz09yx9C4pw2MhW7i80UpG0I6ACaBGRr/9DA9NrT/N8jFBTGLVdcJwIu3xBNG1g2lzKjmLqDEKIz2mYvisHsWW48bX6BUF2c9DDdkqThqWc/kMkjaPjHMmzYUIbKCCS+pgOyzZC5lD+Ux9WgaAsHkcRhHJ/8aexY6GOEpFZW5QQt1YmFv4w7K6KHZnjYBh0P2oN0Hq1fPN6Muyw15IuKy1xn2Wo=
 before_install:
 - gem install cocoapods
 - gem install xcpretty
 - gem install xcpretty-travis-formatter
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.cer.enc -d -a
+  -out scripts/certs/dist.cer
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.p12.enc -d -a
+  -out scripts/certs/dist.p12
+- "./scripts/add-key.sh"
 script:
 - set -o pipefail
 - xcodebuild -workspace DesktopProfiles.xcworkspace -list
-- xcodebuild -workspace DesktopProfiles.xcworkspace -scheme DesktopApp clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -f `xcpretty-travis-formatter`
-
+- xcodebuild -workspace DesktopProfiles.xcworkspace -scheme DesktopApp clean build
+  CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -f `xcpretty-travis-formatter`
+after_script:
+- "./scripts/remove-key.sh"
