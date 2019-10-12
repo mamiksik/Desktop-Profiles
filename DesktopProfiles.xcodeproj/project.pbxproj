@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -981,9 +981,7 @@
 				DEVELOPMENT_TEAM = PJUC9VKD3V;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Maturitka",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/SharedCode/Objective-C",
 					"$(PROJECT_DIR)/Realm",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/DesktopApp/Info.plist";
@@ -991,10 +989,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/SharedCode/Objective-C",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mamiksik.DesktopProfiles;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1018,19 +1013,13 @@
 				DEVELOPMENT_TEAM = PJUC9VKD3V;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Maturitka",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/SharedCode/Objective-C",
 					"$(PROJECT_DIR)/Realm",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/DesktopApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/SharedCode/Objective-C",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mamiksik.DesktopProfiles;
